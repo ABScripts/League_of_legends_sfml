@@ -1,0 +1,12 @@
+release/assetmanager.o
+release/command.o
+release/commandsimplementation.o
+release/gamemodel.o
+release/gamewindow.o
+release/inputhandle.o
+release/main.o
+release/mathcore.o
+release/tank.o
+release/tankmodel.o
+release/tanktowermodel.o
+release/tanktowerview.o

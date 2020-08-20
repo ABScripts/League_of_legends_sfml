@@ -1,0 +1,12 @@
+debug/assetmanager.o
+debug/command.o
+debug/commandsimplementation.o
+debug/gamemodel.o
+debug/gamewindow.o
+debug/inputhandle.o
+debug/main.o
+debug/mathcore.o
+debug/tank.o
+debug/tankmodel.o
+debug/tanktowermodel.o
+debug/tanktowerview.o
