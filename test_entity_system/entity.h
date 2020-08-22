@@ -1,8 +1,9 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include "scenenode.h"
 
-class Entity
+class Entity : public SceneNode
 {
 public:
   Entity();

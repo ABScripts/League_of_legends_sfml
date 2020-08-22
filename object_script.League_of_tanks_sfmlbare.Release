@@ -1,3 +1,5 @@
+release/entity.o
+release/scenenode.o
 release/assetmanager.o
 release/command.o
 release/commandsimplementation.o

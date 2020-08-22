@@ -228,6 +228,7 @@ Makefile: League_of_tanks_sfmlbare.pro ../../../../Qt/5.15.0/mingw81_64/mkspecs/
 		../../../../Qt/5.15.0/mingw81_64/mkspecs/features/toolchain.prf \
 		../../../../Qt/5.15.0/mingw81_64/mkspecs/features/default_pre.prf \
 		../../../../Qt/5.15.0/mingw81_64/mkspecs/features/win32/default_pre.prf \
+		test_entity_system/test_entity_system.pri \
 		../../../../Qt/5.15.0/mingw81_64/mkspecs/features/resolve_config.prf \
 		../../../../Qt/5.15.0/mingw81_64/mkspecs/features/exclusive_builds_post.prf \
 		../../../../Qt/5.15.0/mingw81_64/mkspecs/features/default_post.prf \
@@ -409,6 +410,7 @@ Makefile: League_of_tanks_sfmlbare.pro ../../../../Qt/5.15.0/mingw81_64/mkspecs/
 ../../../../Qt/5.15.0/mingw81_64/mkspecs/features/toolchain.prf:
 ../../../../Qt/5.15.0/mingw81_64/mkspecs/features/default_pre.prf:
 ../../../../Qt/5.15.0/mingw81_64/mkspecs/features/win32/default_pre.prf:
+test_entity_system/test_entity_system.pri:
 ../../../../Qt/5.15.0/mingw81_64/mkspecs/features/resolve_config.prf:
 ../../../../Qt/5.15.0/mingw81_64/mkspecs/features/exclusive_builds_post.prf:
 ../../../../Qt/5.15.0/mingw81_64/mkspecs/features/default_post.prf:

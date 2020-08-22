@@ -4,25 +4,25 @@
 #include "assetmanager.h"
 #include "mathcore.h"
 #include "tanktowerview.h"
+#include "SFML/Graphics/RenderTarget.hpp"
+#include "SFML/Graphics/RenderStates.hpp"
 
 Tank::Tank(TankModel::Type type)
   : m_TankModel(new TankModel(type)),
     m_TowerView(new TankTowerView(m_TankModel->TowerTexturePath()))
 {
-  m_drawableObjects.push_back(this);
-  m_drawableObjects.push_back(m_TowerView);
   setupTank();
 }
 
-void Tank::setupTank() {
-  setTexture(AssetManager::getTexture(m_TankModel->TexturePath())); // actually setting texture
-  setScale(m_TankModel->Width() / static_cast<double>(getTextureRect().width),
-           m_TankModel->Height() / static_cast<double>(getTextureRect().height));
-  setOrigin(getTextureRect().width / 2, getTextureRect().height / 2);
+void Tank::drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const {
+  target.draw(mSprite, states);
 }
 
-const std::vector<const sf::Sprite *> &Tank::drawableObjects() const {
-  return m_drawableObjects;
+void Tank::setupTank() {
+  mSprite.setTexture(AssetManager::getTexture(m_TankModel->TexturePath())); // actually setting texture
+  mSprite.setScale(m_TankModel->Width() / static_cast<double>(mSprite.getTextureRect().width),
+           m_TankModel->Height() / static_cast<double>(mSprite.getTextureRect().height));
+  mSprite.setOrigin(mSprite.getTextureRect().width / 2, mSprite.getTextureRect().height / 2);
 }
 
 void Tank::turnLeft() {
