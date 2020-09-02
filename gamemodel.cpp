@@ -1,12 +1,10 @@
 #include "gamemodel.h"
 #include "tank.h"
 
-GameModel::GameModel()
-{
-  m_tanks.push_back(Tank()); // aading one tank
+GameModel::GameModel() {
+  m_tanks.push_back(new Tank()); // adding one tank
 }
 
-std::vector<Tank> &GameModel::getTanks()  // should be changed to const func returning const ref
-{
+const std::vector<Entity*> &GameModel::getTanks() const {  // should be changed to const func returning const ref
   return m_tanks;
 }

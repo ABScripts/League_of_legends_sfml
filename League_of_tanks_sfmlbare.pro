@@ -9,6 +9,7 @@ SOURCES += \
         assetmanager.cpp \
         command.cpp \
         commandsimplementation.cpp \
+    game.cpp \
         gamemodel.cpp \
         gamewindow.cpp \
         inputhandle.cpp \
@@ -23,6 +24,7 @@ HEADERS += \
     assetmanager.h \
     command.h \
     commandsimplementation.h \
+    game.h \
     gamemodel.h \
     gamewindow.h \
     inputhandle.h \

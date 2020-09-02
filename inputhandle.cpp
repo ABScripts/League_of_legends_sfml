@@ -16,13 +16,16 @@ InputHandle::InputHandle()
   m_InputHandleInstanse = this;
 }
 
-void InputHandle::processEvents(Tank &obj) {
+void InputHandle::processEvents(ControlableEntity *obj) {
   if (m_Event.type == sf::Event::KeyPressed) {
       processKeyPressedEvents();
     }
   else if (m_Event.type == sf::Event::KeyReleased) {
       processKeyReleasedEvents();
     }
+//  else if (m_Event.type == sf::Event::MouseMoved) {
+//      processMouseMoveEvents(obj);
+//    }
 
   if (!m_PressedKeyBuffer.empty()) {
       applyPressedKeys(obj);
@@ -46,7 +49,12 @@ void InputHandle::processKeyReleasedEvents() {
     }
 }
 
-void InputHandle::applyPressedKeys(Tank &obj) const
+//void InputHandle::processMouseMoveEvents(ControlableEntity *obj)
+//{
+//  m_MouseMoved->execute(obj, std::make_pair<double, double>(1,2));
+//}
+
+void InputHandle::applyPressedKeys(ControlableEntity *obj) const
 {
   for (const auto &key : m_PressedKeyBuffer) {
       if (key == sf::Keyboard::Left) {

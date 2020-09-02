@@ -4,6 +4,7 @@
 #include <iostream>
 #include "tank.h"
 #include "tanktowerview.h"
+#include "test_entity_system/entity.h"
 
 GameWindow::~GameWindow()
 {
@@ -20,19 +21,29 @@ GameWindow::GameWindow(const sf::String &title, sf::Uint32 style, const sf::Cont
 
 void GameWindow::render()
 {
-  const std::vector<Tank> & tanks = m_gameModel_ptr->getTanks();
-   for (const auto &tank: tanks) {
+  const std::vector<Entity*> & tanks = m_gameModel_ptr->getTanks();
 
+   for (const auto &tank: tanks) {
+        draw(*tank);
      }
 }
 
 void GameWindow::handleInput()
 {
-  std::vector<Tank> & tanks = m_gameModel_ptr->getTanks();
-  m_InputHandler->processEvents(tanks[0]);
+  const std::vector<Entity*> & playerTank = m_gameModel_ptr->getTanks();
+  for (auto ent : playerTank) {
+     if (auto it = dynamic_cast<ControlableEntity*>(ent)) {
+         m_InputHandler->processEvents(it);
+       }
+    }
 }
 
-sf::Event &GameWindow::event()
+const sf::Event &GameWindow::event() const
 {
   return m_InputHandler->event();
+}
+
+bool GameWindow::eventsHaveHappened()
+{
+  return sf::RenderWindow::pollEvent(m_InputHandler->event());
 }

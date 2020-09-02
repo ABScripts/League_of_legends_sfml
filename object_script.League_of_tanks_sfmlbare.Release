@@ -1,8 +1,10 @@
+release/controlableentity.o
 release/entity.o
 release/scenenode.o
 release/assetmanager.o
 release/command.o
 release/commandsimplementation.o
+release/game.o
 release/gamemodel.o
 release/gamewindow.o
 release/inputhandle.o

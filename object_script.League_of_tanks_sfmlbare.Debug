@@ -1,8 +1,10 @@
+debug/controlableentity.o
 debug/entity.o
 debug/scenenode.o
 debug/assetmanager.o
 debug/command.o
 debug/commandsimplementation.o
+debug/game.o
 debug/gamemodel.o
 debug/gamewindow.o
 debug/inputhandle.o

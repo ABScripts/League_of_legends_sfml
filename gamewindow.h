@@ -15,7 +15,8 @@ public:
 
     void render();
     void handleInput();
-    sf::Event &event();
+    const sf::Event &event() const;
+    bool eventsHaveHappened();
 private:
     GameModel *m_gameModel_ptr;
     InputHandle *m_InputHandler;

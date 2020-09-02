@@ -4,13 +4,12 @@
 #include <vector>
 #include "SFML/Graphics/Drawable.hpp"
 #include "SFML/Graphics/Transformable.hpp"
+#include "SFML/System.hpp"
 
 class SceneNode : public sf::Drawable, public sf::Transformable{
   public:
     SceneNode();
     ~SceneNode();
-    SceneNode & operator=(const SceneNode &) = delete;
-    SceneNode(const SceneNode&) = delete;
     void attachChild(SceneNode * child);
     SceneNode *detachChild(const SceneNode &node);
   private:
@@ -19,6 +18,8 @@ class SceneNode : public sf::Drawable, public sf::Transformable{
   private:
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const final; // implementing sf::Drawable pure virtual function
     virtual void drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const;
+    SceneNode & operator=(const SceneNode &);
+    //SceneNode(const SceneNode &); // resolve this problem
 };
 
 #endif //SCENENODE_H

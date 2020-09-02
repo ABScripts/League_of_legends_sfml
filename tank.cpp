@@ -9,8 +9,9 @@
 
 Tank::Tank(TankModel::Type type)
   : m_TankModel(new TankModel(type)),
-    m_TowerView(new TankTowerView(m_TankModel->TowerTexturePath()))
+    m_TowerView(new TankTowerView(m_TankModel->TowerTexturePath(), m_TankModel->Height() / 2))
 {
+  attachChild(m_TowerView);
   setupTank();
 }
 
@@ -41,5 +42,16 @@ void Tank::turnUp() {
 void Tank::turnDown() {
   const auto shift = MathCore::getLineMoveCoefficients(getRotation(), m_TankModel->m_MoveSpeed);
   setPosition(getPosition().x - shift.first, getPosition().y + shift.second);
+}
+
+void Tank::mouseMoved(const std::pair<double, double> & mousePosition)
+{
+  double angle = atan2(mousePosition.second,
+                      mousePosition.first);
+
+  // remembers the last position of mouse when it was moved (products a slight movements)
+  // tank->setTrackMousePoint(QPoint(event->x(), event->y()));
+
+  m_TowerView->setRotation(MathCore::degToRad(angle));
 }
 

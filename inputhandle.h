@@ -4,6 +4,7 @@
 #include <set>
 #include "SFML/Window/Event.hpp"
 
+class ControlableEntity;
 class Command;
 class Tank;
 
@@ -13,7 +14,7 @@ public:
   InputHandle();
   InputHandle(const InputHandle&) = delete;
   const InputHandle& operator=(const InputHandle&) = delete;
-  void processEvents(Tank &obj);
+  void processEvents(ControlableEntity *obj);
   sf::Event &event();
 private:
   std::set<sf::Keyboard::Key> m_PressedKeyBuffer;
@@ -23,10 +24,12 @@ private:
   Command *m_TurnDownButton;
   Command *m_TurnLeftButton;
   Command *m_TurnRightButton;
+  Command *m_MouseMoved;
 private:
   void processKeyPressedEvents();
   void processKeyReleasedEvents();
-  void applyPressedKeys(Tank &obj) const;
+  void processMouseMoveEvents(ControlableEntity *obj);
+  void applyPressedKeys(ControlableEntity *obj) const;
 };
 
 #endif // INPUTHANDLE_H

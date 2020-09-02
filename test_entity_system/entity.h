@@ -6,7 +6,7 @@
 class Entity : public SceneNode
 {
 public:
-  Entity();
+  Entity() = default;
 };
 
 #endif // ENTITY_H
