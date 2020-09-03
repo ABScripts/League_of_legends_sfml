@@ -26,21 +26,21 @@ void Tank::setupTank() {
   mSprite.setOrigin(mSprite.getTextureRect().width / 2, mSprite.getTextureRect().height / 2);
 }
 
-void Tank::turnLeft() {
-  setRotation(getRotation() - m_TankModel->RotationSpeed());
+void Tank::turnLeft(sf::Time time) {
+  setRotation(getRotation() - m_TankModel->RotationSpeed() * time.asSeconds());
 }
 
-void Tank::turnRight() {
-  setRotation(getRotation() + m_TankModel->RotationSpeed());
+void Tank::turnRight(sf::Time time) {
+  setRotation(getRotation() + m_TankModel->RotationSpeed() * time.asSeconds());
 }
 
-void Tank::turnUp() {
-  const auto shift = MathCore::getLineMoveCoefficients(getRotation(), m_TankModel->m_MoveSpeed); // consider changing these lines to more readable ones
+void Tank::turnUp(sf::Time time) {
+  const auto shift = MathCore::getLineMoveCoefficients(getRotation(), m_TankModel->m_MoveSpeed * time.asSeconds()); // consider changing these lines to more readable ones
   setPosition(getPosition().x + shift.first, getPosition().y - shift.second);
 }
 
-void Tank::turnDown() {
-  const auto shift = MathCore::getLineMoveCoefficients(getRotation(), m_TankModel->m_MoveSpeed);
+void Tank::turnDown(sf::Time time) {
+  const auto shift = MathCore::getLineMoveCoefficients(getRotation(), m_TankModel->m_MoveSpeed * time.asSeconds());
   setPosition(getPosition().x - shift.first, getPosition().y + shift.second);
 }
 

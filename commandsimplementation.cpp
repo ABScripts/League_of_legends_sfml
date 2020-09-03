@@ -1,20 +1,20 @@
 #include "commandsimplementation.h"
 #include "tank.h"
 
-void TurnRight::execute(ControlableEntity *ent) {
-  ent->turnRight();
+void TurnRight::execute(ControlableEntity *entity, const sf::Time &t) {
+  entity->turnRight(t);
 }
 
-void TurnLeft::execute(ControlableEntity *ent) {
-  ent->turnLeft();
+void TurnLeft::execute(ControlableEntity *entity, const sf::Time &t) {
+  entity->turnLeft(t);
 }
 
-void TurnUp::execute(ControlableEntity *ent) {
-  ent->turnUp();
+void TurnUp::execute(ControlableEntity *entity, const sf::Time &t) {
+  entity->turnUp(t);
 }
 
-void TurnDown::execute(ControlableEntity *ent) {
-  ent->turnDown();
+void TurnDown::execute(ControlableEntity *entity, const sf::Time &t) {
+  entity->turnDown(t);
 }
 
 //void MouseMoved::execute(ControlableEntity *ent, const std::pair<double, double> & mousePosition) {

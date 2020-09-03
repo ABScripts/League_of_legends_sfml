@@ -8,10 +8,10 @@ class ControlableEntity : public Entity
 public:
   ControlableEntity() = default;
 
-  virtual void turnLeft() = 0;
-  virtual void turnRight() = 0;
-  virtual void turnUp() = 0;
-  virtual void turnDown() = 0;
+  virtual void turnLeft(sf::Time) = 0;
+  virtual void turnRight(sf::Time) = 0;
+  virtual void turnUp(sf::Time) = 0;
+  virtual void turnDown(sf::Time) = 0;
   virtual void mouseMoved(const std::pair<double, double> &) = 0;
 };
 

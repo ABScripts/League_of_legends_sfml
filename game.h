@@ -11,12 +11,13 @@ public:
   Game();
   void run();
 private:
+  static const sf::Time mFps;
+  static AssetManager mManager;
+  static sf::Color mRefreshColor;
   std::unique_ptr<GameWindow> mGameWindow;
-  static AssetManager manager;
   sf::Clock mClock;
-  const sf::Time fps;
 private:
-  void update();
+  void update(const sf::Time &);
   void render();
   void processEvents();
 };

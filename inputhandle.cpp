@@ -1,51 +1,54 @@
 #include <assert.h>
 #include <iostream>
+#include <list>
 #include "inputhandle.h"
 #include "command.h"
 #include "commandsimplementation.h"
 
-InputHandle * InputHandle::m_InputHandleInstanse = nullptr;
+InputHandle * InputHandle::mInputHandleInstanse = nullptr;
 
 InputHandle::InputHandle()
-  : m_TurnUpButton(new TurnUp()),
-    m_TurnDownButton(new TurnDown()),
-    m_TurnLeftButton(new TurnLeft()),
-    m_TurnRightButton(new TurnRight())
+  : mCommands(new std::list<Command*>()),
+    mTurnUpButton(new TurnUp()),
+    mTurnDownButton(new TurnDown()),
+    mTurnLeftButton(new TurnLeft()),
+    mTurnRightButton(new TurnRight())
 {
-  assert(m_InputHandleInstanse == nullptr);
-  m_InputHandleInstanse = this;
+  assert(mInputHandleInstanse == nullptr);
+  mInputHandleInstanse = this;
 }
 
-void InputHandle::processEvents(ControlableEntity *obj) {
-  if (m_Event.type == sf::Event::KeyPressed) {
+std::shared_ptr<std::list<Command *> > InputHandle::processEvents() {
+  if (mEvent.type == sf::Event::KeyPressed) {
       processKeyPressedEvents();
     }
-  else if (m_Event.type == sf::Event::KeyReleased) {
+  else if (mEvent.type == sf::Event::KeyReleased) {
       processKeyReleasedEvents();
     }
 //  else if (m_Event.type == sf::Event::MouseMoved) {
 //      processMouseMoveEvents(obj);
 //    }
 
-  if (!m_PressedKeyBuffer.empty()) {
-      applyPressedKeys(obj);
+  if (!mPressedKeyBuffer.empty()) {
+      return applyPressedKeys();
     }
+  return nullptr;
 }
 
 sf::Event &InputHandle::event() {
-  return m_Event;
+  return mEvent;
 }
 
 void InputHandle::processKeyPressedEvents() {
-  if (m_PressedKeyBuffer.find(m_Event.key.code) == m_PressedKeyBuffer.end()) { // if it is a new key pressing
-      m_PressedKeyBuffer.insert(m_Event.key.code);
+  if (mPressedKeyBuffer.find(mEvent.key.code) == mPressedKeyBuffer.end()) { // if it is a new key pressing
+      mPressedKeyBuffer.insert(mEvent.key.code);
     }
 }
 
 void InputHandle::processKeyReleasedEvents() {
-  auto it = m_PressedKeyBuffer.find(m_Event.key.code);
-  if (it != m_PressedKeyBuffer.end()) { // if this key pressing is active
-      m_PressedKeyBuffer.erase(it);
+  auto it = mPressedKeyBuffer.find(mEvent.key.code);
+  if (it != mPressedKeyBuffer.end()) { // if this key pressing is active
+      mPressedKeyBuffer.erase(it);
     }
 }
 
@@ -54,20 +57,25 @@ void InputHandle::processKeyReleasedEvents() {
 //  m_MouseMoved->execute(obj, std::make_pair<double, double>(1,2));
 //}
 
-void InputHandle::applyPressedKeys(ControlableEntity *obj) const
+std::shared_ptr<std::list<Command*> > InputHandle::applyPressedKeys()
 {
-  for (const auto &key : m_PressedKeyBuffer) {
+  (*mCommands).clear();
+
+
+  for (const auto &key : mPressedKeyBuffer) {
       if (key == sf::Keyboard::Left) {
-          m_TurnLeftButton->execute(obj);
+          mCommands->push_back(mTurnLeftButton);
         }
       else if (key == sf::Keyboard::Right) {
-          m_TurnRightButton->execute(obj);
+          mCommands->push_back(mTurnRightButton);
         }
        else if (key == sf::Keyboard::Up) {
-         m_TurnUpButton->execute(obj);
+          mCommands->push_back(mTurnUpButton);
         }
       else if (key == sf::Keyboard::Down) {
-          m_TurnDownButton->execute(obj);
+          mCommands->push_back(mTurnDownButton);
         }
     }
+
+  return mCommands;
 }

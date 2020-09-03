@@ -21,10 +21,10 @@ private:
 public:
   Tank(TankModel::Type type  = TankModel::Type::Self);
   virtual void drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const;
-  void turnLeft();
-  void turnRight();
-  void turnUp();
-  void turnDown();
+  void turnLeft(sf::Time time);
+  void turnRight(sf::Time time);
+  void turnUp(sf::Time time);
+  void turnDown(sf::Time time);
   void mouseMoved(const std::pair<double, double> & mousePosition);
 };
 

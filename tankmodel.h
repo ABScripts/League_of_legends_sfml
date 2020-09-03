@@ -17,8 +17,8 @@ public:
   enum class Description {
     Width = 100,
     Height = 100,
-    MoveSpeed = 2,
-    RotationSpeed = 1
+    MoveSpeed = 250,
+    RotationSpeed = 100
   };
 public:
   TankModel() = default;

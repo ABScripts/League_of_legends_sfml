@@ -1,8 +1,11 @@
 #ifndef GAMEWINDOW_H
 #define GAMEWINDOW_H
 
+#include <list>
+#include <memory>
 #include "SFML/Graphics.hpp"
 
+class Command;
 class GameModel;
 class InputHandle;
 
@@ -17,9 +20,11 @@ public:
     void handleInput();
     const sf::Event &event() const;
     bool eventsHaveHappened();
+    void update(const sf::Time &time);
 private:
     GameModel *m_gameModel_ptr;
     InputHandle *m_InputHandler;
+    std::shared_ptr<std::list<Command*> > mCommands;
 };
 
 #endif // GAMEWINDOW_H

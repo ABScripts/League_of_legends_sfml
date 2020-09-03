@@ -8,25 +8,25 @@ class Entity;
 class TurnLeft : public Command
 {
 public:
-  virtual void execute(ControlableEntity *ent) override;
+  virtual void execute(ControlableEntity *, const sf::Time &) override;
 };
 
 class TurnRight : public Command
 {
 public:
-  virtual void execute(ControlableEntity *ent) override;
+  virtual void execute(ControlableEntity *, const sf::Time &) override;
 };
 
 class TurnUp: public Command
 {
 public:
-  virtual void execute(ControlableEntity *ent) override;
+  virtual void execute(ControlableEntity *, const sf::Time &) override;
 };
 
 class TurnDown : public Command
 {
 public:
-  virtual void execute(ControlableEntity *ent) override;
+  virtual void execute(ControlableEntity *t, const sf::Time &) override;
 };
 
 //class MouseMoved : public Command

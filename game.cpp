@@ -1,46 +1,33 @@
 #include "game.h"
 #include <iostream>
 
-AssetManager Game::manager = AssetManager();
+const sf::Time Game::mFps = sf::seconds(1.f / 60.f);
+AssetManager Game::mManager = AssetManager();
+sf::Color Game::mRefreshColor = sf::Color::White;
 
 Game::Game()
-  : mGameWindow(new GameWindow("GameWindow")),
-    fps(sf::seconds(1.f / 60.f))
+  : mGameWindow(new GameWindow("GameWindow"))
 {
 }
 
 void Game::run()
 {
-  //sf::Time currentTime = mClock.restart();
-
   sf::Time time = sf::Time::Zero;
 
   while (mGameWindow->isOpen()) {
-                 processEvents();
-//      sf::Time newTime = mClock.restart();
-//      sf::Time frameTime = newTime - currentTime;
-//      currentTime = newTime;
-//      std::cout << frameTime.asMicroseconds() << std::endl;
-//      accumulator += frameTime;
+      processEvents();
+      time += mClock.restart();
 
-    time += mClock.restart();
-     std::cout << time.asSeconds() << std::endl;
-      while (time > fps) {
-
-          //std::cout << "   " << accumulator.asMicroseconds() << std::endl;
-          update();
-
-          time -= fps;
+      for ( ; time > mFps; time -= mFps) {
+          update(mFps);
           render();
       }
-
-
     }
 }
 
-void Game::update()
+void Game::update(const sf::Time &time)
 {
-
+  mGameWindow->update(time);
 }
 
 void Game::render()

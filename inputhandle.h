@@ -2,6 +2,8 @@
 #define INPUTHANDLE_H
 
 #include <set>
+#include <memory>
+#include <list>
 #include "SFML/Window/Event.hpp"
 
 class ControlableEntity;
@@ -9,27 +11,28 @@ class Command;
 class Tank;
 
 class InputHandle
-{
+{ 
 public:
   InputHandle();
   InputHandle(const InputHandle&) = delete;
   const InputHandle& operator=(const InputHandle&) = delete;
-  void processEvents(ControlableEntity *obj);
+  std::shared_ptr<std::list<Command*> > processEvents();
   sf::Event &event();
 private:
-  std::set<sf::Keyboard::Key> m_PressedKeyBuffer;
-  sf::Event m_Event;
-  static InputHandle *m_InputHandleInstanse;
-  Command *m_TurnUpButton;
-  Command *m_TurnDownButton;
-  Command *m_TurnLeftButton;
-  Command *m_TurnRightButton;
-  Command *m_MouseMoved;
+  static InputHandle *mInputHandleInstanse;
+  std::set<sf::Keyboard::Key> mPressedKeyBuffer;
+  std::shared_ptr<std::list<Command*> > mCommands;
+  sf::Event mEvent;
+  Command *mTurnUpButton;
+  Command *mTurnDownButton;
+  Command *mTurnLeftButton;
+  Command *mTurnRightButton;
+  Command *mMouseMoved;
 private:
   void processKeyPressedEvents();
   void processKeyReleasedEvents();
   void processMouseMoveEvents(ControlableEntity *obj);
-  void applyPressedKeys(ControlableEntity *obj) const;
+  std::shared_ptr<std::list<Command*> > applyPressedKeys();
 };
 
 #endif // INPUTHANDLE_H
