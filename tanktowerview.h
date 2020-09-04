@@ -15,7 +15,7 @@ public:
   virtual void drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const;
 private:
   TankTowerModel * m_TowerModel;
-  sf::Sprite mSprite;
+      sf::Sprite mSprite;
 private:
   void setupTower(const std::string & towerTexturePath, int shift);
   void turnLeft() {};

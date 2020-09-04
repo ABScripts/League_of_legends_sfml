@@ -3,10 +3,12 @@ CONFIG += console c++17
 CONFIG -= app_bundle
 CONFIG += qt
 
-include(test_entity_system/test_entity_system.pri)
+include(entity_system/entity_system.pri)
 
 SOURCES += \
         assetmanager.cpp \
+    bullet.cpp \
+    bulletmodel.cpp \
         command.cpp \
         commandsimplementation.cpp \
     game.cpp \
@@ -15,6 +17,7 @@ SOURCES += \
         inputhandle.cpp \
         main.cpp \
         mathcore.cpp \
+    mousecommand.cpp \
         tank.cpp \
         tankmodel.cpp \
         tanktowermodel.cpp \
@@ -22,6 +25,8 @@ SOURCES += \
 
 HEADERS += \
     assetmanager.h \
+    bullet.h \
+    bulletmodel.h \
     command.h \
     commandsimplementation.h \
     game.h \
@@ -29,6 +34,7 @@ HEADERS += \
     gamewindow.h \
     inputhandle.h \
     mathcore.h \
+    mousecommand.h \
     tank.h \
     tankmodel.h \
     tanktowermodel.h \
@@ -45,4 +51,5 @@ DEPENDPATH += $$PWD/SFML/include
 RESOURCES +=
 
 DISTFILES += \
+    entity_system/test_entity_system.pri \
     test_entity_system/test_entity_system.pri

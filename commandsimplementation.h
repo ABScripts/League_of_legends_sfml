@@ -2,8 +2,10 @@
 #define COMMANDSIMPLEMENTATION_H
 
 class Entity;
+
 #include "command.h"
-#include <utility>
+#include "mousecommand.h"
+#include "SFML/Graphics/Vertex.hpp"
 
 class TurnLeft : public Command
 {
@@ -26,13 +28,20 @@ public:
 class TurnDown : public Command
 {
 public:
-  virtual void execute(ControlableEntity *t, const sf::Time &) override;
+  virtual void execute(ControlableEntity *, const sf::Time &) override;
 };
 
-//class MouseMoved : public Command
-//{
-//public:
-//  virtual void execute(ControlableEntity *ent, const std::pair<double, double> & mousePosition) override;
-//};
+class MouseMoved : public MouseCommand
+{
+public:
+   void execute(ControlableEntity *, const sf::Time&) override;
+};
+
+class MousePressed : public MouseCommand
+{
+public:
+  void execute(ControlableEntity *, const sf::Time &) override;
+};
+
 
 #endif // COMMANDSIMPLEMENTATION_H

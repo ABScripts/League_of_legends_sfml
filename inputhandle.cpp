@@ -2,7 +2,7 @@
 #include <iostream>
 #include <list>
 #include "inputhandle.h"
-#include "command.h"
+#include "mousecommand.h"
 #include "commandsimplementation.h"
 
 InputHandle * InputHandle::mInputHandleInstanse = nullptr;
@@ -12,27 +12,35 @@ InputHandle::InputHandle()
     mTurnUpButton(new TurnUp()),
     mTurnDownButton(new TurnDown()),
     mTurnLeftButton(new TurnLeft()),
-    mTurnRightButton(new TurnRight())
+    mTurnRightButton(new TurnRight()),
+    mMouseMoved(new MouseMoved()),
+    mMousePressed(new MousePressed())
 {
   assert(mInputHandleInstanse == nullptr);
   mInputHandleInstanse = this;
 }
 
 std::shared_ptr<std::list<Command *> > InputHandle::processEvents() {
+  (*mCommands).clear();
+
   if (mEvent.type == sf::Event::KeyPressed) {
       processKeyPressedEvents();
     }
   else if (mEvent.type == sf::Event::KeyReleased) {
       processKeyReleasedEvents();
     }
-//  else if (m_Event.type == sf::Event::MouseMoved) {
-//      processMouseMoveEvents(obj);
-//    }
+  else if (mEvent.type == sf::Event::MouseMoved) {
+      processMouseMoveEvents();
+    }
+  else if (mEvent.type == sf::Event::MouseButtonPressed) {
+      processMousePressedEvents();
+    }
 
   if (!mPressedKeyBuffer.empty()) {
-      return applyPressedKeys();
+      commandsToApply();
     }
-  return nullptr;
+
+  return mCommands;
 }
 
 sf::Event &InputHandle::event() {
@@ -52,16 +60,20 @@ void InputHandle::processKeyReleasedEvents() {
     }
 }
 
-//void InputHandle::processMouseMoveEvents(ControlableEntity *obj)
-//{
-//  m_MouseMoved->execute(obj, std::make_pair<double, double>(1,2));
-//}
-
-std::shared_ptr<std::list<Command*> > InputHandle::applyPressedKeys()
+void InputHandle::processMouseMoveEvents()
 {
-  (*mCommands).clear();
+ mMouseMoved->setMousePosition(sf::Vector2f(mEvent.mouseMove.x, mEvent.mouseMove.y));
+ mCommands->push_back(mMouseMoved);
+}
 
+void InputHandle::processMousePressedEvents()
+{
+  mMousePressed->setMousePosition(sf::Vector2f(mEvent.mouseMove.x, mEvent.mouseMove.y));
+  mCommands->push_back(mMousePressed);
+}
 
+void InputHandle::commandsToApply()
+{
   for (const auto &key : mPressedKeyBuffer) {
       if (key == sf::Keyboard::Left) {
           mCommands->push_back(mTurnLeftButton);
@@ -76,6 +88,4 @@ std::shared_ptr<std::list<Command*> > InputHandle::applyPressedKeys()
           mCommands->push_back(mTurnDownButton);
         }
     }
-
-  return mCommands;
 }

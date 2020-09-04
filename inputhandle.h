@@ -9,6 +9,12 @@
 class ControlableEntity;
 class Command;
 class Tank;
+class TurnLeft;
+class TurnRight;
+class TurnUp;
+class TurnDown;
+class MouseMoved;
+class MousePressed;
 
 class InputHandle
 { 
@@ -23,16 +29,18 @@ private:
   std::set<sf::Keyboard::Key> mPressedKeyBuffer;
   std::shared_ptr<std::list<Command*> > mCommands;
   sf::Event mEvent;
-  Command *mTurnUpButton;
-  Command *mTurnDownButton;
-  Command *mTurnLeftButton;
-  Command *mTurnRightButton;
-  Command *mMouseMoved;
+  TurnUp *mTurnUpButton;
+  TurnDown *mTurnDownButton;
+  TurnLeft *mTurnLeftButton;
+  TurnRight *mTurnRightButton;
+  MouseMoved *mMouseMoved;
+  MousePressed *mMousePressed;
 private:
   void processKeyPressedEvents();
   void processKeyReleasedEvents();
-  void processMouseMoveEvents(ControlableEntity *obj);
-  std::shared_ptr<std::list<Command*> > applyPressedKeys();
+  void processMouseMoveEvents();
+  void processMousePressedEvents();
+  void commandsToApply();
 };
 
 #endif // INPUTHANDLE_H
