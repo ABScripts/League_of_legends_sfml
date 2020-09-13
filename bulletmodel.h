@@ -11,7 +11,7 @@ public:
   enum class Description {
     Width = 20,
     Height = 20,
-    Speed = 100
+    Speed = 400
   };
 
   int height() const;
@@ -20,10 +20,11 @@ public:
   std::string texturePath() const;
 
 private:
+  static const std::string mBulletTExturePath;
+
   int mHeight, mWidth;
   double mSpeed;
   const std::string mTexturePath;
-  static const std::string mBulletTExturePath;
 };
 
 #endif // BULLETMODEL_H

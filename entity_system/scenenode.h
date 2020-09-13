@@ -11,7 +11,10 @@ class SceneNode : public sf::Drawable, public sf::Transformable{
     SceneNode();
     ~SceneNode();
     void attachChild(SceneNode * child);
+    void attachToParent(SceneNode * child);
     SceneNode *detachChild(const SceneNode &node);
+    virtual void update(const sf::Time & time);
+    virtual void updateCurrent(const sf::Time & time);
   private:
     SceneNode * mParentNode;
     std::vector<SceneNode*> mChildren; // consider change it to the unique_ptr

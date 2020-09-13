@@ -1,7 +1,6 @@
 #ifndef COMMAND_H
 #define COMMAND_H
 
-#include <memory>
 #include "SFML/System/Time.hpp"
 class ControlableEntity;
 

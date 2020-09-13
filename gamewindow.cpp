@@ -1,11 +1,9 @@
 #include "gamewindow.h"
 #include "gamemodel.h"
 #include "inputhandle.h"
-#include <iostream>
-#include "tank.h"
-#include "tanktowerview.h"
-#include "test_entity_system/entity.h"
 #include "command.h"
+#include "entity_system/entity.h"
+#include "tank.h"
 
 GameWindow::~GameWindow()
 {
@@ -22,11 +20,11 @@ GameWindow::GameWindow(const sf::String &title, sf::Uint32 style, const sf::Cont
 
 void GameWindow::render()
 {
-  const std::vector<Entity*> & tanks = m_gameModel_ptr->getTanks();
+  const auto & gameLayers = m_gameModel_ptr->getLayers();
 
-   for (const auto &tank: tanks) {
-        draw(*tank);
-     }
+  for (const auto &layer : gameLayers) {
+      draw(*layer.second);
+    }
 }
 
 void GameWindow::handleInput() {
@@ -46,13 +44,11 @@ bool GameWindow::eventsHaveHappened()
 void GameWindow::update(const sf::Time &time)
 {
     if (mCommands) {
-  const std::vector<Entity*> & playerTank = m_gameModel_ptr->getTanks();
+      Tank * playerTank = m_gameModel_ptr->getPlayer();
+      playerTank->updateCurrent(time, mCommands);
+    }
 
-
-      for (auto & command : *mCommands) {
-          if (const auto it = dynamic_cast<ControlableEntity*>(playerTank[0])) {
-              command->execute(it, time);
-        }
-      }
+    for (const auto & layer : m_gameModel_ptr->getLayers()) {
+        layer.second->update(time);
     }
 }

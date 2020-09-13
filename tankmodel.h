@@ -8,7 +8,7 @@ class TankModel
 public:
   using TexturePaths = std::pair<std::string, std::string>;
 
-  enum class Type {
+  enum class TankType {
     Self = 0,
     Teammate,
     Enemy
@@ -20,31 +20,34 @@ public:
     MoveSpeed = 250,
     RotationSpeed = 100
   };
+
 public:
   TankModel() = default;
-  // consider supplying tankType argument with a default value
-  TankModel(Type tankType); // resolve this inconvenience as it is not too handy defining private section beforehand.
-  std::string TexturePath() const;
+  TankModel(TankType bodyType, TankType towerType); // resolve this inconvenience as it is not too handy defining private section beforehand.
   short Height() const;
   short Width() const;
   unsigned char MoveSpeed() const;
   unsigned char RotationSpeed() const;
-  std::string TowerTexturePath() const;
+  std::string towerTexturePath() const;
+  std::string bodyTexturePath() const;
 
 private:
-  static const TexturePaths m_selfTexturePath;
-  static const TexturePaths m_teammateTexturePath;
-  static const TexturePaths m_enemyTexturePath;
+  static const TexturePaths mSelfTexturePath;
+  static const TexturePaths mEnemyTexturePath;
+  static const TexturePaths mTeammateTexturePath;
 
-  short int m_Width;
-  short int m_Height;
-  unsigned char m_RotationSpeed;
-  unsigned char m_MoveSpeed;
-  std::string m_BodyTexturePath;
-  std::string m_TowerTexturePath;
-  Type m_Type;
+  short int mWidth;
+  short int mHeight;
+  unsigned char mRotationSpeed;
+  unsigned char mMoveSpeed;
+  std::string mBodyTexturePath;
+  std::string mTowerTexturePath;
+  TankType mBodyType;
+  TankType mTowerType;
 private:
   void setupTankModel();
+  TexturePaths switchTextureSets(const TankType & type);
+
   friend class Tank;
 };
 

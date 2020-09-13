@@ -1,7 +1,7 @@
 #ifndef BULLET_H
 #define BULLET_H
 
-#include "test_entity_system/entity.h"
+#include "entity_system/entity.h"
 #include "SFML/Graphics/Sprite.hpp"
 #include "bulletmodel.h"
 
@@ -12,6 +12,7 @@ public:
   Bullet(double angle);
 
   void drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const override;
+  void updateCurrent(const sf::Time &time) override;
 private:
   BulletModel mBulletModel;
   sf::Sprite mSprite;

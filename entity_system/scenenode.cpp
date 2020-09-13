@@ -1,5 +1,4 @@
 #include "scenenode.h"
-
 #include <algorithm>
 #include <assert.h>
 
@@ -18,6 +17,12 @@ SceneNode::~SceneNode() {
 void SceneNode::attachChild(SceneNode *child) {
   child->mParentNode = this;
   mChildren.push_back(std::move(child));
+}
+
+void SceneNode::attachToParent(SceneNode *child)
+{
+  if (mParentNode)
+    mParentNode->attachChild(child);
 }
 
 SceneNode *SceneNode::detachChild(const SceneNode &node) {
@@ -41,5 +46,18 @@ void SceneNode::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 }
 
 void SceneNode::drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const {
+
+}
+
+void SceneNode::update(const sf::Time &time)
+{
+  updateCurrent(time);
+  for (const auto &child : mChildren) {
+      child->update(time);
+    }
+}
+
+void SceneNode::updateCurrent(const sf::Time &time)
+{
 
 }

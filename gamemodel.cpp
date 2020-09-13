@@ -1,10 +1,27 @@
 #include "gamemodel.h"
 #include "tank.h"
 
-GameModel::GameModel() {
-  m_tanks.push_back(new Tank()); // adding one tank
+GameModel::GameModel()
+  : mLayers(
+            {{Layers::MapLayer, new Entity()},
+             {Layers::BattlefieldLayer, new Entity()}
+           }),
+    mPlayer(new Tank(mLayers[Layers::MapLayer]))
+{
 }
 
-const std::vector<Entity*> &GameModel::getTanks() const {  // should be changed to const func returning const ref
-  return m_tanks;
+GameModel::~GameModel()
+{
+  for (auto & layer : mLayers) {
+      delete layer.second;
+    }
+}
+
+const std::map<GameModel::Layers, Entity *> &GameModel::getLayers() const {
+  return mLayers;
+}
+
+Tank *GameModel::getPlayer() const
+{
+  return mPlayer;
 }

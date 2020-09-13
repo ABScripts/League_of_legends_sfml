@@ -3,25 +3,29 @@
 
 #include <string>
 #include "SFML/Graphics/Sprite.hpp"
-#include "test_entity_system/entity.h"
+#include "entity_system/entity.h"
 
+class Bullet;
 class TankTowerModel;
+enum class TankType;
 
 class TankTowerView : public Entity
 {
 public:
   TankTowerView() = default;
-  TankTowerView(const std::string & towerTexturePath, int shift);
+  TankTowerView(const std::string & towerTexturePath, int shift, Entity * parent = nullptr);
   virtual void drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const;
+  Bullet *shootBullet(const sf::Time & time, const sf::Vertex &spawnPositio, int rotation);
+  void updateCurrent(const sf::Time & time);
 private:
   TankTowerModel * m_TowerModel;
-      sf::Sprite mSprite;
+  sf::Sprite mSprite;
+
+  sf::Time mRechargeTime;
+  bool mGunIsReady;
 private:
-  void setupTower(const std::string & towerTexturePath, int shift);
-  void turnLeft() {};
-  void turnRight()  {};
-  void turnUp()  {};
-  void turnDown()  {};
+  void setupTower(int shift);
+  bool gunIsReady() const;
 };
 
 #endif // TANKTOWERVIEW_H

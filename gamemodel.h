@@ -1,17 +1,28 @@
 #ifndef GAMEMODEL_H
 #define GAMEMODEL_H
 #include <vector>
-#include "test_entity_system/entity.h"
+#include <map>
 
+class Entity;
 class Tank;
 
 class GameModel
 {
-public:
+  enum class Layers {
+    MapLayer = 0,
+    BattlefieldLayer
+  };
+
+public:  
   GameModel();
-  const std::vector<Entity*> & getTanks() const;
+  ~GameModel();
+  const std::map<Layers, Entity *> &getLayers() const;
+  Tank *getPlayer() const;
+
 private:
-  std::vector<Entity*> m_tanks;
+  // game layers -> defines their childrens` render level
+  std::map<Layers, Entity*> mLayers;
+  Tank * mPlayer;
 };
 
 #endif // GAMEMODEL_H

@@ -1,6 +1,6 @@
 #include "mathcore.h"
-#include "test_entity_system/controlableentity.h"
-#include <iostream>
+#include "entity_system/controlableentity.h"
+
 const double MathCore::m_Pi = std::acos(0.) * 2;
 
 std::pair<double, double> MathCore::getLineMoveCoefficients(const double &angle, double moveSpeed) {
@@ -22,6 +22,6 @@ sf::Vertex MathCore::pointOnCircle(const ControlableEntity * entity, double circ
 {
     double radAngle = degToRad(angle);
 
-    return sf::Vector2f(circleRadius * cos(radAngle),
-                        circleRadius * sin(radAngle));
+    return sf::Vector2f(circleRadius * cos(radAngle) + entity->getOrigin().x ,
+                        circleRadius * sin(radAngle) + entity->getOrigin().y);
 }

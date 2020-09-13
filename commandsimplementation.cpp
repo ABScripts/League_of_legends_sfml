@@ -1,5 +1,5 @@
 #include "commandsimplementation.h"
-#include "tank.h"
+#include "entity_system/controlableentity.h"
 
 void TurnRight::execute(ControlableEntity *entity, const sf::Time &time) {
   entity->turnRight(time);
@@ -17,12 +17,12 @@ void TurnDown::execute(ControlableEntity *entity, const sf::Time &time) {
   entity->turnDown(time);
 }
 
-void MouseMoved::execute(ControlableEntity *entity, const sf::Time &)
+void MouseMoved::execute(ControlableEntity *entity, const sf::Time &time)
 {
-  entity->mouseMoved(mMousePosition);
+  entity->mouseMoved(time, mMousePosition);
 }
 
-void MousePressed::execute(ControlableEntity *entity, const sf::Time &)
+void MousePressed::execute(ControlableEntity *entity, const sf::Time &time)
 {
-  entity->mousePressed(mMousePosition);
+  entity->mousePressed(time, mMousePosition);
 }

@@ -1,5 +1,4 @@
 #include <assert.h>
-#include <iostream>
 #include <list>
 #include "inputhandle.h"
 #include "mousecommand.h"

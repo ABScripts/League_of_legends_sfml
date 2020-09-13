@@ -1,5 +1,4 @@
 #include "game.h"
-#include <iostream>
 
 const sf::Time Game::mFps = sf::seconds(1.f / 60.f);
 AssetManager Game::mManager = AssetManager();
