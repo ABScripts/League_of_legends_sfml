@@ -1,4 +1,6 @@
 #include "game.h"
+#define DEBUG
+
 
 int main()
 {

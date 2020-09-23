@@ -13,6 +13,7 @@ SOURCES += \
         commandsimplementation.cpp \
     game.cpp \
         gamemodel.cpp \
+    gameobjecteventpull.cpp \
         gamewindow.cpp \
         inputhandle.cpp \
         main.cpp \
@@ -31,6 +32,7 @@ HEADERS += \
     commandsimplementation.h \
     game.h \
     gamemodel.h \
+    gameobjecteventpull.h \
     gamewindow.h \
     inputhandle.h \
     mathcore.h \

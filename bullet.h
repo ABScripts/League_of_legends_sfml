@@ -15,7 +15,6 @@ public:
   void updateCurrent(const sf::Time &time) override;
 private:
   BulletModel mBulletModel;
-  sf::Sprite mSprite;
 private:
   void setupBullet();
 };

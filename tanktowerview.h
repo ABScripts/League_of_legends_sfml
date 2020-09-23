@@ -19,13 +19,10 @@ public:
   void updateCurrent(const sf::Time & time);
 private:
   TankTowerModel * m_TowerModel;
-  sf::Sprite mSprite;
-
   sf::Time mRechargeTime;
   bool mGunIsReady;
 private:
-  void setupTower(int shift);
-  bool gunIsReady() const;
+  void setupTower(const std::string &towerTexturePath, int shift);
 };
 
 #endif // TANKTOWERVIEW_H

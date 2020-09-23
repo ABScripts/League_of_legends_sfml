@@ -6,7 +6,6 @@
 #include "SFML/Graphics/RenderStates.hpp"
 
 Bullet::Bullet()
- : mSprite(AssetManager::getTexture(mBulletModel.texturePath()))
 {
 
 }
@@ -20,7 +19,7 @@ Bullet::Bullet(double angle)
 
 void Bullet::setupBullet()
 {
-  Entity::adjustTexture(mSprite, mBulletModel.width(), mBulletModel.height());
+  Entity::adjustTexture(mBulletModel.texturePath(), mBulletModel.width(), mBulletModel.height());
 }
 
 void Bullet::drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const {

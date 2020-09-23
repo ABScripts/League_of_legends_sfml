@@ -4,6 +4,7 @@
 #include <memory>
 #include "gamewindow.h"
 #include "assetmanager.h"
+#include "gameobjecteventpull.h"
 
 class Game
 {
@@ -13,6 +14,7 @@ public:
 private:
   static const sf::Time mFps;
   static AssetManager mManager;
+  static GameObjectEventPull mEventPull;
   static sf::Color mRefreshColor;
   std::unique_ptr<GameWindow> mGameWindow;
   sf::Clock mClock;

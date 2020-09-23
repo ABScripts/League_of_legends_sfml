@@ -8,6 +8,7 @@ release/command.o
 release/commandsimplementation.o
 release/game.o
 release/gamemodel.o
+release/gameobjecteventpull.o
 release/gamewindow.o
 release/inputhandle.o
 release/main.o

@@ -8,6 +8,7 @@ GameModel::GameModel()
            }),
     mPlayer(new Tank(mLayers[Layers::MapLayer]))
 {
+  mEnemies.push_back(new Tank(mLayers[Layers::MapLayer], TankModel::TankType::Enemy));
 }
 
 GameModel::~GameModel()
@@ -24,4 +25,9 @@ const std::map<GameModel::Layers, Entity *> &GameModel::getLayers() const {
 Tank *GameModel::getPlayer() const
 {
   return mPlayer;
+}
+
+const std::vector<SceneNode *> &GameModel::getEnemies() const
+{
+  return mEnemies;
 }

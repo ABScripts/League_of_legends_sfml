@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.12.2, 2020-09-10T02:23:59. -->
+<!-- Written by QtCreator 4.12.2, 2020-09-21T23:39:20. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -132,10 +132,10 @@
     <value type="int" key="SeparateDebugInfo">2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-    <value type="bool">true</value>
+    <value type="bool">false</value>
     <value type="int" key="EnableQmlDebugging">2</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\Sviatoslav Rovenchak\Documents\League_of_tanks_sfmlbare</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/Sviatoslav Rovenchak/Documents/League_of_tanks_sfmlbare</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Users\Sviatoslav Rovenchak\Documents\League_of_tanks_sfmlbare\League_of_legends_sfml</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Users/Sviatoslav Rovenchak/Documents/League_of_tanks_sfmlbare/League_of_legends_sfml</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>

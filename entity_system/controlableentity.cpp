@@ -10,7 +10,10 @@ ControlableEntity::ControlableEntity(Entity *parent)
 
 void ControlableEntity::updateCurrent(const sf::Time &time, std::shared_ptr<std::list<Command *> > mCommands)
 {
-  for (auto & command : *mCommands) {
-      command->execute(this, time);
+  if (mCommands) {
+      for (auto & command : *mCommands) {
+          command->execute(this, time);
+        }
     }
+
 }

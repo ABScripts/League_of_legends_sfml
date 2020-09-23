@@ -11,7 +11,7 @@ public:
   enum class Description {
     Width = 20,
     Height = 20,
-    Speed = 400
+    Speed = 550
   };
 
   int height() const;

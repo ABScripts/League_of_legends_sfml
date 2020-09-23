@@ -2,17 +2,18 @@
 #include "tanktowermodel.h"
 #include "assetmanager.h"
 #include "bullet.h"
+#include <math.h>
 #include "SFML/Graphics/RenderTarget.hpp"
+#include  <iostream>
 #include "SFML/Graphics/RenderStates.hpp"
 
 TankTowerView::TankTowerView(const std::string &towerTexturePath, int shift, Entity *parent)
   : Entity(parent),
     m_TowerModel(new TankTowerModel()),
-    mSprite(AssetManager::getTexture(towerTexturePath)),
     mRechargeTime(sf::Time::Zero),
     mGunIsReady(true)
 {
-  setupTower(shift);
+  setupTower(towerTexturePath, shift);
 }
 
 void TankTowerView::drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const {
@@ -21,7 +22,7 @@ void TankTowerView::drawCurrent(sf::RenderTarget &target, sf::RenderStates state
 
 Bullet *TankTowerView::shootBullet(const sf::Time &time, const sf::Vertex &spawnPosition, int rotation)
 {
-  if (gunIsReady()) {
+  if (mGunIsReady) {
       mGunIsReady = false;
       mRechargeTime = sf::seconds(m_TowerModel->rechargeTime());
       Bullet * bullet = new Bullet(rotation);
@@ -31,9 +32,10 @@ Bullet *TankTowerView::shootBullet(const sf::Time &time, const sf::Vertex &spawn
   return nullptr;
 }
 
+
 void TankTowerView::updateCurrent(const sf::Time &time)
 {
-  if (!gunIsReady()) {
+  if (!mGunIsReady) {
       mRechargeTime -= time;
       if (mRechargeTime <= sf::Time(sf::seconds(0))) {
           mGunIsReady = true;
@@ -41,12 +43,7 @@ void TankTowerView::updateCurrent(const sf::Time &time)
     }
 }
 
-void TankTowerView::setupTower(int shift)
+void TankTowerView::setupTower(const std::string &towerTexturePath, int shift)
 {
-  adjustTexture(mSprite, m_TowerModel->Width(), m_TowerModel->Height(), 0, shift);
-}
-
-bool TankTowerView::gunIsReady() const
-{
-  return mGunIsReady;
+  adjustTexture(towerTexturePath, m_TowerModel->Width(), m_TowerModel->Height(), 0, shift);
 }

@@ -4,6 +4,9 @@
 #include "command.h"
 #include "entity_system/entity.h"
 #include "tank.h"
+#include "gameobjecteventpull.h"
+
+class Event;
 
 GameWindow::~GameWindow()
 {
@@ -40,15 +43,32 @@ bool GameWindow::eventsHaveHappened()
 {
   return sf::RenderWindow::pollEvent(m_InputHandler->event());
 }
-
+#include <iostream>
 void GameWindow::update(const sf::Time &time)
 {
-    if (mCommands) {
-      Tank * playerTank = m_gameModel_ptr->getPlayer();
-      playerTank->updateCurrent(time, mCommands);
+  using PEvent = GameObjectEventPull::Event;          // used that using declaration for custom event type
+  using EventType = GameObjectEventPull::EventTypes;
+
+  Tank * playerTank = m_gameModel_ptr->getPlayer();
+  playerTank->updateCurrent(time, mCommands);
+
+  for (const auto & layer : m_gameModel_ptr->getLayers()) {
+      layer.second->update(time);
     }
 
-    for (const auto & layer : m_gameModel_ptr->getLayers()) {
-        layer.second->update(time);
+  for (auto event = GameObjectEventPull::begin();
+       event != GameObjectEventPull::end();
+       event = GameObjectEventPull::increase())
+    {
+      if (event->type() == EventType::Shoot) {
+          bool res = false;
+          event->caller()->checkNodeCollisions(*m_gameModel_ptr->getLayers().at(GameModel::Layers::MapLayer), mCollisionPairs, res);
+          if (res) {std::cout << "bang\n";}
+        }
     }
+
+  // Collision processings...
 }
+
+
+

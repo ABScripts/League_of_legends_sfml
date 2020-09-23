@@ -2,6 +2,7 @@
 
 const sf::Time Game::mFps = sf::seconds(1.f / 60.f);
 AssetManager Game::mManager = AssetManager();
+GameObjectEventPull Game::mEventPull = GameObjectEventPull();
 sf::Color Game::mRefreshColor = sf::Color::White;
 
 Game::Game()
