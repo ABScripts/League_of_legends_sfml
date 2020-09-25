@@ -25,6 +25,7 @@ class SceneNode : public sf::Drawable, public sf::Transformable{
     sf::Transform getWorldTransform() const;
     void checkNodeCollisions(SceneNode &other, std::vector<std::pair<SceneNode&, SceneNode&> > &collisionPairs, bool &res);
     void checkSceneCollisions(SceneNode &other, std::vector<std::pair<SceneNode &, SceneNode &> > &collisionPairs, bool &res);
+    virtual void applyCollisionRules() {}; // temporary
   private:
     SceneNode * mParentNode;
     std::vector<SceneNode*> mChildren; // consider change it to the unique_ptr

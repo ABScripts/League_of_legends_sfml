@@ -63,11 +63,21 @@ void GameWindow::update(const sf::Time &time)
       if (event->type() == EventType::Shoot) {
           bool res = false;
           event->caller()->checkNodeCollisions(*m_gameModel_ptr->getLayers().at(GameModel::Layers::MapLayer), mCollisionPairs, res);
-          if (res) {std::cout << "bang\n";}
+          //if (res) {std::cout << "bang\n";}
         }
     }
 
   // Collision processings...
+
+  for (auto &[projtile, victim] : mCollisionPairs) {
+      if ( Tank * tank = dynamic_cast<Tank*>(&victim) ) {
+          if (!tank->isDestroyed()) {
+           tank->applyCollisionRules();
+            }
+        }
+    }
+
+  mCollisionPairs.clear();
 }
 
 

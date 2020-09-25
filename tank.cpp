@@ -8,12 +8,19 @@
 #include "SFML/Graphics/RenderStates.hpp"
 #include "gameobjecteventpull.h"
 
-Tank::Tank(Entity *parent, TankModel::TankType bodyType, TankModel::TankType towerType)
+// temp section includes
+#include <iostream>
+// end temp section includes
+
+int Tank::mNumberOfTanks_tempVar = 0;
+
+Tank::Tank(Entity *parent, TankModel::TankType bodyType, TankModel::TankType towerType, double xposition, double yposition)
   : ControlableEntity::ControlableEntity(parent),
     mTankModel(new TankModel(bodyType, towerType)),
-    mTowerView(new TankTowerView(mTankModel->towerTexturePath(), mTankModel->Height() / 2, this))
+    mTowerView(new TankTowerView(mTankModel->towerTexturePath(), mTankModel->Height() / 2, this)),
+    mId_tempVar(++mNumberOfTanks_tempVar)
 {
-  if (bodyType == TankModel::TankType::Enemy) this->move(400, 400);
+  this->move(xposition, yposition);
   setupTank();
 }
 
@@ -84,5 +91,12 @@ void Tank::mousePressed(const sf::Time &time, const sf::Vertex &mousePosition)
         }
 
 
+}
+
+void Tank::applyCollisionRules()
+{
+  std::cout << "Tank with id " << mId_tempVar << " have been destroyed!\n";
+  mIsDestroyed = true;
+  mTowerView->mIsDestroyed = true;
 }
 

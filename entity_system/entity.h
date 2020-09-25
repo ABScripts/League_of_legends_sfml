@@ -12,7 +12,10 @@ protected:
   void adjustTexture(const std::string &texturePath, const int & actualWidth, const int & actualHeight, const int & shiftX = 0, const int & shiftY = 0);
   sf::FloatRect getBoundingRect() const;
 
+protected:
   sf::Sprite mSprite;
+  bool mIsDestroyed;
+
 private:
   static const std::string mDefaultTexturePath;
 };

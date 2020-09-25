@@ -8,7 +8,8 @@ GameModel::GameModel()
            }),
     mPlayer(new Tank(mLayers[Layers::MapLayer]))
 {
-  mEnemies.push_back(new Tank(mLayers[Layers::MapLayer], TankModel::TankType::Enemy));
+  for (int i = 100; i < 1000; i += 100)
+    mEnemies.push_back(new Tank(mLayers[Layers::MapLayer], TankModel::TankType::Enemy, TankModel::TankType::Enemy, i, i));
 }
 
 GameModel::~GameModel()

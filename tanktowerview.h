@@ -23,6 +23,8 @@ private:
   bool mGunIsReady;
 private:
   void setupTower(const std::string &towerTexturePath, int shift);
+
+  friend class Tank;
 };
 
 #endif // TANKTOWERVIEW_H
