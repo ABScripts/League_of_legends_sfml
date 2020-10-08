@@ -8,17 +8,34 @@
 #include "SFML/Graphics/RenderStates.hpp"
 #include "gameobjecteventpull.h"
 
-Tank::Tank(Entity *parent, TankModel::TankType bodyType, TankModel::TankType towerType)
+// temp section includes
+#include <iostream>
+// end temp section includes
+
+int Tank::mNumberOfTanks_tempVar = 0;
+
+Tank::Tank(Entity *parent, TankModel::TankType bodyType, TankModel::TankType towerType, double xposition, double yposition)
   : ControlableEntity::ControlableEntity(parent),
     mTankModel(new TankModel(bodyType, towerType)),
-    mTowerView(new TankTowerView(mTankModel->towerTexturePath(), mTankModel->Height() / 2, this))
+    mTowerView(new TankTowerView(mTankModel->towerTexturePath(), mTankModel->Height() / 2, this)),
+    mId_tempVar(++mNumberOfTanks_tempVar)
 {
-  if (bodyType == TankModel::TankType::Enemy) this->move(400, 400);
+  if (bodyType == TankModel::TankType::Enemy) this->move(xposition, yposition);
   setupTank();
 }
 
 void Tank::drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const {
   target.draw(mSprite, states);
+}
+
+void Tank::setCommands(const std::shared_ptr<std::list<Command *> > &commands)
+{
+  mCommands = commands;
+}
+
+std::shared_ptr<std::list<Command *> > Tank::getCommands() const
+{
+  return mCommands;
 }
 
 void Tank::setupTank() {
@@ -27,7 +44,12 @@ void Tank::setupTank() {
 
 // Returns tower`s rotation relatively to the global layer, not to the tank`s body
 int Tank::getGlobalRotation() const {
-    return getRotation() + mTowerView->getRotation();
+  return getRotation() + mTowerView->getRotation();
+}
+
+bool Tank::isAlive() const
+{
+  return mTankModel->health() > 0;
 }
 
 void Tank::turnLeft(const sf::Time &time) {
@@ -84,5 +106,28 @@ void Tank::mousePressed(const sf::Time &time, const sf::Vertex &mousePosition)
         }
 
 
+}
+
+void Tank::applyCollisionRules(SceneNode &collidedObj)
+{
+      try {
+          Bullet &bullet = dynamic_cast<Bullet&>(collidedObj);
+          damage(bullet.getDamage());
+          bullet.destroy();
+      }
+      catch(const std::bad_cast& e) {
+        return;
+      }
+
+  if (!isAlive()) {
+      std::cout << "Tank with id " << mId_tempVar << " have been destroyed!\n";
+      mIsDestroyed = true;
+      mTowerView->setDestroyedStatus(true);
+    }
+}
+
+void Tank::damage(int damage)
+{
+ mTankModel->setHealth(mTankModel->health() - damage);
 }
 

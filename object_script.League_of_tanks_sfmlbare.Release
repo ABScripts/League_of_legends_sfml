@@ -14,6 +14,7 @@ release/inputhandle.o
 release/main.o
 release/mathcore.o
 release/mousecommand.o
+release/quadtree.o
 release/tank.o
 release/tankmodel.o
 release/tanktowermodel.o

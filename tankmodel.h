@@ -18,7 +18,8 @@ public:
     Width = 100,
     Height = 100,
     MoveSpeed = 250,
-    RotationSpeed = 100
+    RotationSpeed = 100,
+    Health = 500
   };
 
 public:
@@ -31,11 +32,15 @@ public:
   std::string towerTexturePath() const;
   std::string bodyTexturePath() const;
 
+  void setHealth(int health);
+  int health() const;
+
 private:
   static const TexturePaths mSelfTexturePath;
   static const TexturePaths mEnemyTexturePath;
   static const TexturePaths mTeammateTexturePath;
 
+  int mHealth;
   short int mWidth;
   short int mHeight;
   unsigned char mRotationSpeed;

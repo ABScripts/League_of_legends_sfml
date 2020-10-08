@@ -64,54 +64,39 @@ void SceneNode::updateCurrent(const sf::Time &time)
 
 sf::Transform SceneNode::getWorldTransform() const
 {
-//  sf::Transform t;
-//  t *= getTransform();
-
-//  if (!mChildren.empty()) {
-//      for (const auto &child : mChildren) {
-//          t *= child->getWorldTransform();
-//        }
-//    }
-  sf::Transform t;
-  if (mParentNode->mParentNode) {
-      t = mParentNode->getTransform();
+  sf::Transform t(getTransform());
+  if (mParentNode) { // while we are not actually getting the layer`s transform matrix
+      t *= mParentNode->getWorldTransform();
     }
-
-  return t * getTransform();
+  return t;
 }
 
-void SceneNode::checkNodeCollisions(SceneNode &other, std::vector<std::pair<SceneNode &, SceneNode &> > &collisionPairs, bool &res)
-{                                   //layer_
-//  if (&other != this) {
-//      if (intersects(*this, other)) {                     // check for "main" node
-//          collisionPairs.emplace_back(*this, other);
-//          res = true;
-//        }
-//      // check for children
-//      for (auto &entityOnLayer : mChildren) { // loop through layer`s children
-
-//            // else, if collision is not detected see for them in deeper "layers"
-//            entityOnLayer->checkNodeCollisions(other, collisionPairs, res);
-//        }
-//    }
-
-    if (&other != this) {
-        // check for children
-        for (auto &entityOnLayer : other.mChildren) { // loop through layer`s children
-            if (entityOnLayer != this) {if (intersects(*this, *entityOnLayer)) {res = true;}
-                // else, if collision is not detected see for them in deeper "layers"
-                this->checkNodeCollisions(*entityOnLayer, collisionPairs, res);}
-
-          }
-      }
+void SceneNode::checkNodeCollisions(SceneNode &other, std::vector<std::pair<SceneNode &, SceneNode &> > &collisionPairs)
+{
+  if (&other != this) {
+      // check for children
+      for (auto &entityOnLayer : other.mChildren) { // loop through layer`s children
+          if (entityOnLayer != this) {
+              if (intersects(*this, *entityOnLayer)) {
+                  collisionPairs.push_back(std::pair<SceneNode&, SceneNode&>(*this, *entityOnLayer));
+                }
+              // else, if collision is not detected see for them in deeper "layers"
+              this->checkNodeCollisions(*entityOnLayer, collisionPairs);}
+        }
+    }
 }
 
-void SceneNode::checkSceneCollisions(SceneNode &other, std::vector<std::pair<SceneNode &, SceneNode &> > &collisionPairs, bool &res) {
-  checkNodeCollisions(other, collisionPairs, res);
+void SceneNode::checkSceneCollisions(SceneNode &other, std::vector<std::pair<SceneNode &, SceneNode &> > &collisionPairs) {
+  checkNodeCollisions(other, collisionPairs);
 
   for (auto &entityOnLayer : other.mChildren) {
-      checkNodeCollisions(*entityOnLayer, collisionPairs, res);
+      checkNodeCollisions(*entityOnLayer, collisionPairs);
     }
+}
+
+bool SceneNode::isDestroyed() const
+{
+  return mIsDestroyed;
 }
 
 bool SceneNode::intersects(const SceneNode &lhr, const SceneNode &rhs)

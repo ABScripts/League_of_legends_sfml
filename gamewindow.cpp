@@ -31,7 +31,8 @@ void GameWindow::render()
 }
 
 void GameWindow::handleInput() {
-    mCommands = m_InputHandler->processEvents();
+    //m_gameModel_ptr->getPlayer()->setCommands(m_InputHandler->processEvents());
+  mCommands = m_InputHandler->processEvents();
 }
 
 const sf::Event &GameWindow::event() const
@@ -46,14 +47,15 @@ bool GameWindow::eventsHaveHappened()
 #include <iostream>
 void GameWindow::update(const sf::Time &time)
 {
-  using PEvent = GameObjectEventPull::Event;          // used that using declaration for custom event type
   using EventType = GameObjectEventPull::EventTypes;
 
   Tank * playerTank = m_gameModel_ptr->getPlayer();
-  playerTank->updateCurrent(time, mCommands);
+  playerTank->update(time, mCommands);
 
-  for (const auto & layer : m_gameModel_ptr->getLayers()) {
+  for (auto & layer : m_gameModel_ptr->getLayers()) {
+
       layer.second->update(time);
+
     }
 
   for (auto event = GameObjectEventPull::begin();
@@ -61,13 +63,19 @@ void GameWindow::update(const sf::Time &time)
        event = GameObjectEventPull::increase())
     {
       if (event->type() == EventType::Shoot) {
-          bool res = false;
-          event->caller()->checkNodeCollisions(*m_gameModel_ptr->getLayers().at(GameModel::Layers::MapLayer), mCollisionPairs, res);
-          if (res) {std::cout << "bang\n";}
+          event->caller()->checkNodeCollisions(*m_gameModel_ptr->getLayers().at(GameModel::Layers::MapLayer), mCollisionPairs);
         }
     }
 
   // Collision processings...
+
+  for (auto &[collObjA, collObjB] : mCollisionPairs) {
+    if (!collObjA.isDestroyed() && !collObjB.isDestroyed()) {
+        collObjA.applyCollisionRules(collObjB);
+      }
+    }
+
+  mCollisionPairs.clear();
 }
 
 

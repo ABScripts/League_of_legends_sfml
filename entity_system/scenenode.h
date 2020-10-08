@@ -6,6 +6,10 @@
 #include "SFML/Graphics/Transformable.hpp"
 #include "SFML/System.hpp"
 #include <iostream>
+#include <memory>
+#include <list>
+
+class Command;
 
 namespace sf {
   class Sprite;
@@ -23,8 +27,13 @@ class SceneNode : public sf::Drawable, public sf::Transformable{
     virtual void update(const sf::Time & time);
     virtual void updateCurrent(const sf::Time & time);
     sf::Transform getWorldTransform() const;
-    void checkNodeCollisions(SceneNode &other, std::vector<std::pair<SceneNode&, SceneNode&> > &collisionPairs, bool &res);
-    void checkSceneCollisions(SceneNode &other, std::vector<std::pair<SceneNode &, SceneNode &> > &collisionPairs, bool &res);
+    void checkNodeCollisions(SceneNode &other, std::vector<std::pair<SceneNode&, SceneNode&> > &collisionPairs);
+    void checkSceneCollisions(SceneNode &other, std::vector<std::pair<SceneNode &, SceneNode &> > &collisionPairs);
+    virtual void applyCollisionRules(SceneNode &) {};
+    bool isDestroyed() const;
+
+protected:
+    bool mIsDestroyed = false;
   private:
     SceneNode * mParentNode;
     std::vector<SceneNode*> mChildren; // consider change it to the unique_ptr

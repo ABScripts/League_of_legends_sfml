@@ -26,3 +26,8 @@ sf::FloatRect Entity::getBoundingRect() const
   return getWorldTransform().transformRect(mSprite.getGlobalBounds());
 }
 
+void Entity::setDestroyedStatus(bool isDestroyed)
+{
+  mIsDestroyed = isDestroyed;
+}
+

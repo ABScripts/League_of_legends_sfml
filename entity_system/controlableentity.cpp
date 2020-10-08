@@ -8,7 +8,7 @@ ControlableEntity::ControlableEntity(Entity *parent)
 
 }
 
-void ControlableEntity::updateCurrent(const sf::Time &time, std::shared_ptr<std::list<Command *> > mCommands)
+void ControlableEntity::update(const sf::Time &time, std::shared_ptr<std::list<Command *> > mCommands)
 {
   if (mCommands) {
       for (auto & command : *mCommands) {

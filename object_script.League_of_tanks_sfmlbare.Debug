@@ -14,6 +14,7 @@ debug/inputhandle.o
 debug/main.o
 debug/mathcore.o
 debug/mousecommand.o
+debug/quadtree.o
 debug/tank.o
 debug/tankmodel.o
 debug/tanktowermodel.o

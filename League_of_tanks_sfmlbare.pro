@@ -19,6 +19,7 @@ SOURCES += \
         main.cpp \
         mathcore.cpp \
     mousecommand.cpp \
+    quadtree.cpp \
         tank.cpp \
         tankmodel.cpp \
         tanktowermodel.cpp \
@@ -37,6 +38,7 @@ HEADERS += \
     inputhandle.h \
     mathcore.h \
     mousecommand.h \
+    quadtree.h \
     tank.h \
     tankmodel.h \
     tanktowermodel.h \

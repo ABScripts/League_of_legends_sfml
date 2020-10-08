@@ -6,6 +6,7 @@ BulletModel::BulletModel()
   : mHeight(static_cast<int>(Description::Height)),
     mWidth(static_cast<int>(Description::Width)),
     mSpeed(static_cast<int>(Description::Speed)),
+    mDamage(static_cast<int>(Description::Damage)),
     mTexturePath(mBulletTExturePath)
 {
 
@@ -29,4 +30,9 @@ double BulletModel::speed() const
 std::string BulletModel::texturePath() const
 {
   return mTexturePath;
+}
+
+int BulletModel::damage() const
+{
+  return mDamage;
 }

@@ -10,6 +10,7 @@ TankModel::TankModel(TankType bodyType, TankType towerType)
     mHeight(static_cast<int>(Description::Height)),
     mRotationSpeed(static_cast<int>(Description::RotationSpeed)),
     mMoveSpeed(static_cast<int>(Description::MoveSpeed)),
+    mHealth(static_cast<int>(Description::Health)),
     mBodyType(bodyType),
     mTowerType(towerType)
 {
@@ -66,4 +67,14 @@ std::string TankModel::towerTexturePath() const
 std::string TankModel::bodyTexturePath() const
 {
   return mBodyTexturePath;
+}
+
+void TankModel::setHealth(int health)
+{
+  mHealth = health;
+}
+
+int TankModel::health() const
+{
+  return mHealth;
 }

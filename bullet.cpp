@@ -31,3 +31,13 @@ void Bullet::updateCurrent(const sf::Time &time)
   std::pair<double, double> newSpot = MathCore::getLineMoveCoefficients(getRotation(), mBulletModel.speed() * time.asSeconds());
   setPosition(getPosition().x + newSpot.first, getPosition().y - newSpot.second);
 }
+
+int Bullet::getDamage() const
+{
+  return mBulletModel.damage();
+}
+
+void Bullet::destroy()
+{
+  mIsDestroyed = true;
+}

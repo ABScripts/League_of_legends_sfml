@@ -13,6 +13,8 @@ public:
 
   void drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const override;
   void updateCurrent(const sf::Time &time) override;
+  int getDamage() const;
+  void destroy();
 private:
   BulletModel mBulletModel;
 private:

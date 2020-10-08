@@ -15,7 +15,7 @@ public:
   TankTowerView() = default;
   TankTowerView(const std::string & towerTexturePath, int shift, Entity * parent = nullptr);
   virtual void drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const;
-  Bullet *shootBullet(const sf::Time & time, const sf::Vertex &spawnPositio, int rotation);
+  Bullet *shootBullet(const sf::Time & time, const sf::Vertex &spawnPosition, int rotation);
   void updateCurrent(const sf::Time & time);
 private:
   TankTowerModel * m_TowerModel;
