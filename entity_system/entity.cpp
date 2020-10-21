@@ -18,12 +18,17 @@ void Entity::adjustTexture(const std::string & texturePath, const int & actualWi
   mSprite.setTexture(AssetManager::getTexture(texturePath), true);
   mSprite.setScale(actualWidth / static_cast<double>(mSprite.getTextureRect().width),
                    actualHeight / static_cast<double>(mSprite.getTextureRect().height));
-  mSprite.setOrigin(mSprite.getTextureRect().width / 2 + shiftX, mSprite.getTextureRect().height / 2 + shiftY);
+  mSprite.setOrigin(mSprite.getTextureRect().width / 2.f + shiftX, mSprite.getTextureRect().height / 2.f + shiftY);
 }
 
 sf::FloatRect Entity::getBoundingRect() const
 {
   return getWorldTransform().transformRect(mSprite.getGlobalBounds());
+}
+
+const sf::Sprite* Entity::getSprite() const
+{
+  return &mSprite;
 }
 
 void Entity::setDestroyedStatus(bool isDestroyed)

@@ -26,7 +26,7 @@ private:
     GameModel *m_gameModel_ptr;
     InputHandle *m_InputHandler;
     std::shared_ptr<std::list<Command*> > mCommands;
-    std::vector<std::pair<SceneNode &, SceneNode&> > mCollisionPairs;
+    std::vector<std::pair<SceneNode *, SceneNode *> > mCollisionPairs;
 };
 
 #endif // GAMEWINDOW_H

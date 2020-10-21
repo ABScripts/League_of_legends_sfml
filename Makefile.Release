@@ -236,6 +236,71 @@ release/controlableentity.o: entity_system/controlableentity.cpp entity_system/c
 		SFML/include/SFML/System/ThreadLocalPtr.inl \
 		SFML/include/SFML/System/Vector3.hpp \
 		SFML/include/SFML/System/Vector3.inl \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvector.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpoint.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qregexp.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
 		SFML/include/SFML/Graphics/Sprite.hpp \
 		SFML/include/SFML/Graphics/Vertex.hpp \
 		SFML/include/SFML/Graphics/Color.hpp \
@@ -279,6 +344,71 @@ release/entity.o: entity_system/entity.cpp entity_system/entity.h \
 		SFML/include/SFML/System/ThreadLocalPtr.inl \
 		SFML/include/SFML/System/Vector3.hpp \
 		SFML/include/SFML/System/Vector3.inl \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvector.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpoint.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qregexp.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
 		SFML/include/SFML/Graphics/Sprite.hpp \
 		SFML/include/SFML/Graphics/Vertex.hpp \
 		SFML/include/SFML/Graphics/Color.hpp \
@@ -319,7 +449,79 @@ release/scenenode.o: entity_system/scenenode.cpp entity_system/scenenode.h \
 		SFML/include/SFML/System/ThreadLocalPtr.hpp \
 		SFML/include/SFML/System/ThreadLocalPtr.inl \
 		SFML/include/SFML/System/Vector3.hpp \
-		SFML/include/SFML/System/Vector3.inl
+		SFML/include/SFML/System/Vector3.inl \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvector.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpoint.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qregexp.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		tank.h \
+		SFML/include/SFML/Graphics/Sprite.hpp \
+		SFML/include/SFML/Graphics/Vertex.hpp \
+		SFML/include/SFML/Graphics/Color.hpp \
+		entity_system/controlableentity.h \
+		entity_system/entity.h \
+		tankmodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\scenenode.o entity_system\scenenode.cpp
 
 release/assetmanager.o: assetmanager.cpp assetmanager.h \
@@ -375,6 +577,71 @@ release/bullet.o: bullet.cpp bullet.h \
 		SFML/include/SFML/System/ThreadLocalPtr.inl \
 		SFML/include/SFML/System/Vector3.hpp \
 		SFML/include/SFML/System/Vector3.inl \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvector.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpoint.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qregexp.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
 		SFML/include/SFML/Graphics/Sprite.hpp \
 		SFML/include/SFML/Graphics/Vertex.hpp \
 		SFML/include/SFML/Graphics/Color.hpp \
@@ -437,6 +704,71 @@ release/commandsimplementation.o: commandsimplementation.cpp commandsimplementat
 		SFML/include/SFML/System/ThreadLocalPtr.inl \
 		SFML/include/SFML/System/Vector3.hpp \
 		SFML/include/SFML/System/Vector3.inl \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvector.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpoint.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qregexp.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
 		SFML/include/SFML/Graphics/Sprite.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\commandsimplementation.o commandsimplementation.cpp
 
@@ -521,24 +853,20 @@ release/game.o: game.cpp game.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\game.o game.cpp
 
 release/gamemodel.o: gamemodel.cpp gamemodel.h \
-		tank.h \
-		SFML/include/SFML/Graphics/Sprite.hpp \
-		SFML/include/SFML/Graphics/Export.hpp \
-		SFML/include/SFML/Config.hpp \
-		SFML/include/SFML/Graphics/Drawable.hpp \
-		SFML/include/SFML/Graphics/RenderStates.hpp \
-		SFML/include/SFML/Graphics/BlendMode.hpp \
-		SFML/include/SFML/Graphics/Transform.hpp \
 		SFML/include/SFML/Graphics/Rect.hpp \
 		SFML/include/SFML/System/Vector2.hpp \
 		SFML/include/SFML/System/Vector2.inl \
 		SFML/include/SFML/Graphics/Rect.inl \
-		SFML/include/SFML/Graphics/Transformable.hpp \
-		SFML/include/SFML/Graphics/Vertex.hpp \
-		SFML/include/SFML/Graphics/Color.hpp \
-		entity_system/controlableentity.h \
+		quadtree.h \
 		entity_system/entity.h \
 		entity_system/scenenode.h \
+		SFML/include/SFML/Graphics/Drawable.hpp \
+		SFML/include/SFML/Graphics/Export.hpp \
+		SFML/include/SFML/Config.hpp \
+		SFML/include/SFML/Graphics/RenderStates.hpp \
+		SFML/include/SFML/Graphics/BlendMode.hpp \
+		SFML/include/SFML/Graphics/Transform.hpp \
+		SFML/include/SFML/Graphics/Transformable.hpp \
 		SFML/include/SFML/System.hpp \
 		SFML/include/SFML/System/Clock.hpp \
 		SFML/include/SFML/System/Export.hpp \
@@ -562,6 +890,113 @@ release/gamemodel.o: gamemodel.cpp gamemodel.h \
 		SFML/include/SFML/System/ThreadLocalPtr.inl \
 		SFML/include/SFML/System/Vector3.hpp \
 		SFML/include/SFML/System/Vector3.inl \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvector.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpoint.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qregexp.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		SFML/include/SFML/Graphics/Sprite.hpp \
+		SFML/include/SFML/Graphics/Vertex.hpp \
+		SFML/include/SFML/Graphics/Color.hpp \
+		SFML/include/SFML/Graphics.hpp \
+		SFML/include/SFML/Window.hpp \
+		SFML/include/SFML/Window/Clipboard.hpp \
+		SFML/include/SFML/Window/Export.hpp \
+		SFML/include/SFML/Window/Context.hpp \
+		SFML/include/SFML/Window/GlResource.hpp \
+		SFML/include/SFML/Window/ContextSettings.hpp \
+		SFML/include/SFML/Window/Cursor.hpp \
+		SFML/include/SFML/Window/Event.hpp \
+		SFML/include/SFML/Window/Joystick.hpp \
+		SFML/include/SFML/Window/Keyboard.hpp \
+		SFML/include/SFML/Window/Mouse.hpp \
+		SFML/include/SFML/Window/Sensor.hpp \
+		SFML/include/SFML/Window/Touch.hpp \
+		SFML/include/SFML/Window/VideoMode.hpp \
+		SFML/include/SFML/Window/Window.hpp \
+		SFML/include/SFML/Window/WindowHandle.hpp \
+		SFML/include/SFML/Window/WindowStyle.hpp \
+		SFML/include/SFML/Graphics/CircleShape.hpp \
+		SFML/include/SFML/Graphics/Shape.hpp \
+		SFML/include/SFML/Graphics/VertexArray.hpp \
+		SFML/include/SFML/Graphics/PrimitiveType.hpp \
+		SFML/include/SFML/Graphics/ConvexShape.hpp \
+		SFML/include/SFML/Graphics/Font.hpp \
+		SFML/include/SFML/Graphics/Glyph.hpp \
+		SFML/include/SFML/Graphics/Texture.hpp \
+		SFML/include/SFML/Graphics/Image.hpp \
+		SFML/include/SFML/Graphics/RectangleShape.hpp \
+		SFML/include/SFML/Graphics/RenderTarget.hpp \
+		SFML/include/SFML/Graphics/View.hpp \
+		SFML/include/SFML/Graphics/RenderTexture.hpp \
+		SFML/include/SFML/Graphics/RenderWindow.hpp \
+		SFML/include/SFML/Graphics/Shader.hpp \
+		SFML/include/SFML/Graphics/Glsl.hpp \
+		SFML/include/SFML/Graphics/Glsl.inl \
+		SFML/include/SFML/Graphics/Text.hpp \
+		SFML/include/SFML/Graphics/VertexBuffer.hpp \
+		tank.h \
+		entity_system/controlableentity.h \
 		tankmodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\gamemodel.o gamemodel.cpp
 
@@ -644,10 +1079,76 @@ release/gamewindow.o: gamewindow.cpp gamewindow.h \
 		SFML/include/SFML/Graphics/Text.hpp \
 		SFML/include/SFML/Graphics/VertexBuffer.hpp \
 		gamemodel.h \
-		inputhandle.h \
-		command.h \
+		quadtree.h \
 		entity_system/entity.h \
 		entity_system/scenenode.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvector.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpoint.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qregexp.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
+		inputhandle.h \
+		command.h \
 		tank.h \
 		entity_system/controlableentity.h \
 		tankmodel.h \
@@ -757,7 +1258,8 @@ release/main.o: main.cpp game.h \
 		SFML/include/SFML/Graphics/Text.hpp \
 		SFML/include/SFML/Graphics/VertexBuffer.hpp \
 		assetmanager.h \
-		gameobjecteventpull.h
+		gameobjecteventpull.h \
+		mathcore.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o main.cpp
 
 release/mathcore.o: mathcore.cpp mathcore.h \
@@ -800,6 +1302,71 @@ release/mathcore.o: mathcore.cpp mathcore.h \
 		SFML/include/SFML/System/ThreadLocalPtr.inl \
 		SFML/include/SFML/System/Vector3.hpp \
 		SFML/include/SFML/System/Vector3.inl \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvector.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpoint.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qregexp.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
 		SFML/include/SFML/Graphics/Sprite.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mathcore.o mathcore.cpp
 
@@ -852,9 +1419,111 @@ release/quadtree.o: quadtree.cpp quadtree.h \
 		SFML/include/SFML/System/ThreadLocalPtr.inl \
 		SFML/include/SFML/System/Vector3.hpp \
 		SFML/include/SFML/System/Vector3.inl \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvector.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpoint.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qregexp.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
 		SFML/include/SFML/Graphics/Sprite.hpp \
 		SFML/include/SFML/Graphics/Vertex.hpp \
-		SFML/include/SFML/Graphics/Color.hpp
+		SFML/include/SFML/Graphics/Color.hpp \
+		SFML/include/SFML/Graphics.hpp \
+		SFML/include/SFML/Window.hpp \
+		SFML/include/SFML/Window/Clipboard.hpp \
+		SFML/include/SFML/Window/Export.hpp \
+		SFML/include/SFML/Window/Context.hpp \
+		SFML/include/SFML/Window/GlResource.hpp \
+		SFML/include/SFML/Window/ContextSettings.hpp \
+		SFML/include/SFML/Window/Cursor.hpp \
+		SFML/include/SFML/Window/Event.hpp \
+		SFML/include/SFML/Window/Joystick.hpp \
+		SFML/include/SFML/Window/Keyboard.hpp \
+		SFML/include/SFML/Window/Mouse.hpp \
+		SFML/include/SFML/Window/Sensor.hpp \
+		SFML/include/SFML/Window/Touch.hpp \
+		SFML/include/SFML/Window/VideoMode.hpp \
+		SFML/include/SFML/Window/Window.hpp \
+		SFML/include/SFML/Window/WindowHandle.hpp \
+		SFML/include/SFML/Window/WindowStyle.hpp \
+		SFML/include/SFML/Graphics/CircleShape.hpp \
+		SFML/include/SFML/Graphics/Shape.hpp \
+		SFML/include/SFML/Graphics/VertexArray.hpp \
+		SFML/include/SFML/Graphics/PrimitiveType.hpp \
+		SFML/include/SFML/Graphics/ConvexShape.hpp \
+		SFML/include/SFML/Graphics/Font.hpp \
+		SFML/include/SFML/Graphics/Glyph.hpp \
+		SFML/include/SFML/Graphics/Texture.hpp \
+		SFML/include/SFML/Graphics/Image.hpp \
+		SFML/include/SFML/Graphics/RectangleShape.hpp \
+		SFML/include/SFML/Graphics/RenderTarget.hpp \
+		SFML/include/SFML/Graphics/View.hpp \
+		SFML/include/SFML/Graphics/RenderTexture.hpp \
+		SFML/include/SFML/Graphics/RenderWindow.hpp \
+		SFML/include/SFML/Graphics/Shader.hpp \
+		SFML/include/SFML/Graphics/Glsl.hpp \
+		SFML/include/SFML/Graphics/Glsl.inl \
+		SFML/include/SFML/Graphics/Text.hpp \
+		SFML/include/SFML/Graphics/VertexBuffer.hpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\quadtree.o quadtree.cpp
 
 release/tank.o: tank.cpp tank.h \
@@ -898,6 +1567,71 @@ release/tank.o: tank.cpp tank.h \
 		SFML/include/SFML/System/ThreadLocalPtr.inl \
 		SFML/include/SFML/System/Vector3.hpp \
 		SFML/include/SFML/System/Vector3.inl \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvector.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpoint.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qregexp.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
 		tankmodel.h \
 		tanktowerview.h \
 		assetmanager.h \
@@ -907,6 +1641,9 @@ release/tank.o: tank.cpp tank.h \
 		SFML/include/SFML/Graphics/RenderTarget.hpp \
 		SFML/include/SFML/Graphics/View.hpp \
 		SFML/include/SFML/Graphics/PrimitiveType.hpp \
+		SFML/include/SFML/Graphics/RectangleShape.hpp \
+		SFML/include/SFML/Graphics/Shape.hpp \
+		SFML/include/SFML/Graphics/VertexArray.hpp \
 		gameobjecteventpull.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\tank.o tank.cpp
 
@@ -956,6 +1693,71 @@ release/tanktowerview.o: tanktowerview.cpp tanktowerview.h \
 		SFML/include/SFML/System/ThreadLocalPtr.inl \
 		SFML/include/SFML/System/Vector3.hpp \
 		SFML/include/SFML/System/Vector3.inl \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/QDebug \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qdebug.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobal.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig-bootstrapped.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qconfig.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtcore-config.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsystemdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qprocessordetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcompilerdetection.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtypeinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsysinfo.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlogging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qflags.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbasicatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_bootstrap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qgenericatomic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_cxx11.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qatomic_msvc.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qglobalstatic.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmutex.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnumeric.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qversiontagging.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhash.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qchar.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiterator.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qrefcount.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qarraydata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qhashfunctions.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstring.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qnamespace.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringliteral.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringalgorithms.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringview.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringbuilder.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpair.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvector.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainertools_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qpoint.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qbytearraylist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringlist.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qregexp.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qstringmatcher.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmap.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qtextstream.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qiodevice.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobjectdefs_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcoreevent.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qscopedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qmetatype.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvarlengtharray.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontainerfwd.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qobject_impl.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qlocale.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qvariant.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qshareddata.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qset.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontiguouscache.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer.h \
+		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
 		tanktowermodel.h \
 		assetmanager.h \
 		bullet.h \

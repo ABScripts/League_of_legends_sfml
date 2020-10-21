@@ -6,13 +6,14 @@ const TankModel::TexturePaths TankModel::mEnemyTexturePath = std::make_pair("res
 const TankModel::TexturePaths TankModel::mTeammateTexturePath= std::make_pair("res/tankbody.png", "res/tanktower.png");
 
 TankModel::TankModel(TankType bodyType, TankType towerType)
-  : mWidth(static_cast<int>(Description::Width)),
-    mHeight(static_cast<int>(Description::Height)),
-    mRotationSpeed(static_cast<int>(Description::RotationSpeed)),
-    mMoveSpeed(static_cast<int>(Description::MoveSpeed)),
-    mHealth(static_cast<int>(Description::Health)),
-    mBodyType(bodyType),
-    mTowerType(towerType)
+  : mWidth(static_cast<int>(Description::Width))
+  , mHeight(static_cast<int>(Description::Height))
+  , mRotationSpeed(static_cast<int>(Description::RotationSpeed))
+  , mMoveSpeed(static_cast<int>(Description::MoveSpeed))
+  , mHealth(static_cast<int>(Description::Health))
+  , mTimeToNextTankRotation(static_cast<int>(Description::TimeToNextTankRotation))
+  , mBodyType(bodyType)
+  , mTowerType(towerType)
 {
   setupTankModel();
 }
@@ -77,4 +78,9 @@ void TankModel::setHealth(int health)
 int TankModel::health() const
 {
   return mHealth;
+}
+
+int TankModel::timeToNextTankRotation() const
+{
+  return mTimeToNextTankRotation;
 }

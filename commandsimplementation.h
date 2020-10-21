@@ -31,12 +31,6 @@ public:
   virtual void execute(ControlableEntity *, const sf::Time &) override;
 };
 
-class MouseMoved : public MouseCommand
-{
-public:
-   void execute(ControlableEntity *, const sf::Time&) override;
-};
-
 class MousePressed : public MouseCommand
 {
 public:

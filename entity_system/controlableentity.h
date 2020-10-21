@@ -17,9 +17,8 @@ public:
   virtual void turnRight(const sf::Time &time) = 0;
   virtual void turnUp(const sf::Time &time) = 0;
   virtual void turnDown(const sf::Time &time) = 0;
-  virtual void mouseMoved(const sf::Time &time, const sf::Vertex &mousePosition) = 0;
   virtual void mousePressed(const sf::Time &time, const sf::Vertex &mousePosition) = 0;
-  virtual void update(const sf::Time & time,  std::shared_ptr<std::list<Command*> > mCommands);
+  virtual void update(const sf::Time & time,  std::shared_ptr<std::list<Command *> > &mCommands);
 };
 
 #endif // CONTROLABLEENTITY_H

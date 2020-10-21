@@ -6,39 +6,34 @@
 #include "bullet.h"
 #include "SFML/Graphics/RenderTarget.hpp"
 #include "SFML/Graphics/RenderStates.hpp"
+#include "SFML/Graphics/RectangleShape.hpp"
 #include "gameobjecteventpull.h"
-
-// temp section includes
-#include <iostream>
-// end temp section includes
 
 int Tank::mNumberOfTanks_tempVar = 0;
 
 Tank::Tank(Entity *parent, TankModel::TankType bodyType, TankModel::TankType towerType, double xposition, double yposition)
-  : ControlableEntity::ControlableEntity(parent),
-    mTankModel(new TankModel(bodyType, towerType)),
-    mTowerView(new TankTowerView(mTankModel->towerTexturePath(), mTankModel->Height() / 2, this)),
-    mId_tempVar(++mNumberOfTanks_tempVar)
+  : ControlableEntity::ControlableEntity(parent)
+  , mTankModel(new TankModel(bodyType, towerType))
+  , mTowerView(new TankTowerView(mTankModel->towerTexturePath(), mTankModel->Height() / 2, this))
+  , mId_tempVar(++mNumberOfTanks_tempVar)
+  , mVelocityVector(0, 0)
+  , mRotationIsAllowed(true)
+  , mCenterPoint(getPosition().x + getBoundingRect().width / 2, getPosition().y + getBoundingRect().height / 2)
 {
-  if (bodyType == TankModel::TankType::Enemy) this->move(xposition, yposition);
-  setupTank();
+  setupTank(xposition, yposition);
 }
 
 void Tank::drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const {
   target.draw(mSprite, states);
 }
 
-void Tank::setCommands(const std::shared_ptr<std::list<Command *> > &commands)
+sf::Vector2f Tank::getCenterPoint() const
 {
-  mCommands = commands;
+  return mCenterPoint;
 }
 
-std::shared_ptr<std::list<Command *> > Tank::getCommands() const
-{
-  return mCommands;
-}
-
-void Tank::setupTank() {
+void Tank::setupTank(float x, float y) {
+  setPosition(x, y);
   Entity::adjustTexture(mTankModel->bodyTexturePath(), mTankModel->Width(), mTankModel->Height());
 }
 
@@ -52,47 +47,48 @@ bool Tank::isAlive() const
   return mTankModel->health() > 0;
 }
 
+void Tank::applyRotation(int rotationSpeed)
+{
+  if (mRotationIsAllowed) {
+      mRotationIsAllowed = false;
+      mTimeToNextRotation = sf::milliseconds(mTankModel->timeToNextTankRotation());
+      setRotation(getRotation() + rotationSpeed);
+    }
+}
+
 void Tank::turnLeft(const sf::Time &time) {
-  mouseMoved(time, mTrackTowerAngle);
-  setRotation(getRotation() - mTankModel->RotationSpeed() * time.asSeconds());
+//  static_cast<void>(time);
+//  applyRotation(-mTankModel->RotationSpeed());
+  setRotation(getRotation() - 120 * time.asSeconds());
+  qDebug() << "Turn right: "<< getRotation() << "\n";
 }
 
 void Tank::turnRight(const sf::Time &time) {
-  mouseMoved(time, mTrackTowerAngle);
-  setRotation(getRotation() + mTankModel->RotationSpeed() * time.asSeconds());
+//  static_cast<void>(time);
+//  applyRotation(mTankModel->RotationSpeed());
+   setRotation(getRotation() + 120 * time.asSeconds());
+  qDebug() << "Turn right: "<< getRotation() << "\n";
 }
 
 void Tank::turnUp(const sf::Time &time) {
-  mouseMoved(time, mTrackTowerAngle);
   const auto shift = MathCore::getLineMoveCoefficients(getRotation(), mTankModel->MoveSpeed() * time.asSeconds()); // consider changing these lines to more readable ones
-  setPosition(getPosition().x + shift.first, getPosition().y - shift.second);
+  mVelocityVector = {shift.first, -shift.second};
+  setPosition(getPosition().x + mVelocityVector.x, getPosition().y + mVelocityVector.y);
+  mCenterPoint.x +=  mVelocityVector.x; // put in ...
+  mCenterPoint.y +=  mVelocityVector.y;
 }
 
 void Tank::turnDown(const sf::Time &time) {
-  mouseMoved(time, mTrackTowerAngle);
   const auto shift = MathCore::getLineMoveCoefficients(getRotation(), mTankModel->MoveSpeed() * time.asSeconds());
-  setPosition(getPosition().x - shift.first, getPosition().y + shift.second);
-}
-
-void Tank::mouseMoved(const sf::Time &time, const sf::Vertex &mousePosition)
-{
-  mTrackTowerAngle = mousePosition;
-
-  double angle = atan2(mTrackTowerAngle.position.y - getPosition().y,
-                       mTrackTowerAngle.position.x - getPosition().x);
-
-  mTowerView->setRotation(MathCore::radToDeg(angle) - getRotation() + 90);
-   // + 90 becouse this func means:
-   //       90
-   //   0    +   180
-   //       270
-   // At the same time in our coordinate system 90 is replaced with 0 and all left numbers go all the way down.
+  mVelocityVector = {-shift.first, shift.second};
+  setPosition(getPosition().x + mVelocityVector.x, getPosition().y + mVelocityVector.y);
+  mCenterPoint.x +=  mVelocityVector.x;
+  mCenterPoint.y +=  mVelocityVector.y;
 }
 
 void Tank::mousePressed(const sf::Time &time, const sf::Vertex &mousePosition)
 {
-
-
+     static_cast<void>(mousePosition);
      sf::Vertex spawnPoint = MathCore::pointOnCircle(this,
                                                      mTankModel->Height() + 4,
                                                      getGlobalRotation() - 90);
@@ -102,25 +98,24 @@ void Tank::mousePressed(const sf::Time &time, const sf::Vertex &mousePosition)
                                                    getGlobalRotation()) )
         {
           attachToParent(bullet);
-          GameObjectEventPull::pushEvent(bullet, GameObjectEventPull::EventTypes::Shoot);
+          GameObjectEventPull::pushEvent(bullet, GameObjectEventPull::EventTypes::RegisterInQuadTree);
         }
-
-
 }
 
-void Tank::applyCollisionRules(SceneNode &collidedObj)
+void Tank::applyCollisionToSelf(SceneNode *collidedObj)
 {
-      try {
-          Bullet &bullet = dynamic_cast<Bullet&>(collidedObj);
-          damage(bullet.getDamage());
-          bullet.destroy();
-      }
-      catch(const std::bad_cast& e) {
-        return;
-      }
+  if (!collidedObj) return;
+
+  if (Bullet *bullet = dynamic_cast<Bullet*>(collidedObj)){
+      damage(bullet->getDamage());
+      bullet->destroy();
+    }
+  else if (Tank *tank = dynamic_cast<Tank*>(collidedObj)) {
+      setPosition(getPosition().x - mVelocityVector.x, getPosition().y - mVelocityVector.y);
+    }
 
   if (!isAlive()) {
-      std::cout << "Tank with id " << mId_tempVar << " have been destroyed!\n";
+      std::cout << "Tank with id " << mId_tempVar << " have been destroyed!\n"; // test code
       mIsDestroyed = true;
       mTowerView->setDestroyedStatus(true);
     }
@@ -128,6 +123,25 @@ void Tank::applyCollisionRules(SceneNode &collidedObj)
 
 void Tank::damage(int damage)
 {
- mTankModel->setHealth(mTankModel->health() - damage);
+  mTankModel->setHealth(mTankModel->health() - damage);
 }
 
+void Tank::updateCurrent(const sf::Time &time)
+{
+  if (!mRotationIsAllowed) {
+      mTimeToNextRotation -= time;
+      if (mTimeToNextRotation <= sf::Time(sf::seconds(0))) {
+          mRotationIsAllowed = true;
+        }
+    }
+}
+
+void Tank::setCommands(const std::shared_ptr<std::list<Command *> > &commands)
+{
+  mCommands = commands;
+}
+
+std::shared_ptr<std::list<Command *> > Tank::getCommands() const
+{
+  return mCommands;
+}

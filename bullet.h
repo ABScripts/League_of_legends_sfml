@@ -15,6 +15,7 @@ public:
   void updateCurrent(const sf::Time &time) override;
   int getDamage() const;
   void destroy();
+
 private:
   BulletModel mBulletModel;
 private:

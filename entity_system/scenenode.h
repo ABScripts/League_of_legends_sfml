@@ -9,6 +9,8 @@
 #include <memory>
 #include <list>
 
+#include <QDebug>
+
 class Command;
 
 namespace sf {
@@ -26,23 +28,28 @@ class SceneNode : public sf::Drawable, public sf::Transformable{
     SceneNode *detachChild(const SceneNode &node);
     virtual void update(const sf::Time & time);
     virtual void updateCurrent(const sf::Time & time);
-    sf::Transform getWorldTransform() const;
-    void checkNodeCollisions(SceneNode &other, std::vector<std::pair<SceneNode&, SceneNode&> > &collisionPairs);
-    void checkSceneCollisions(SceneNode &other, std::vector<std::pair<SceneNode &, SceneNode &> > &collisionPairs);
-    virtual void applyCollisionRules(SceneNode &) {};
+    void checkNodeCollisions(SceneNode *other, std::vector<std::pair<SceneNode *, SceneNode *> > &collisionPairs);
+    void checkSceneCollisions(SceneNode *other, std::vector<std::pair<SceneNode *, SceneNode *> > &collisionPairs);
+    virtual void applyCollisionToSelf(SceneNode *) {};
     bool isDestroyed() const;
 
 protected:
     bool mIsDestroyed = false;
+
+protected:
+    sf::Transform getWorldTransform() const;
+    virtual sf::FloatRect getBoundingRect() const = 0;
+
   private:
     SceneNode * mParentNode;
     std::vector<SceneNode*> mChildren; // consider change it to the unique_ptr
+
   private:
     virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const final; // implementing sf::Drawable pure virtual function
     virtual void drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const;
-    virtual sf::FloatRect getBoundingRect() const = 0;
     SceneNode & operator=(const SceneNode &);
-    //SceneNode(const SceneNode &); // resolve this problem
+
+    friend class QuadTree;
 };
 
 #endif //SCENENODE_H

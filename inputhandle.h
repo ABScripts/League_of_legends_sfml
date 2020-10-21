@@ -38,7 +38,6 @@ private:
 private:
   void processKeyPressedEvents();
   void processKeyReleasedEvents();
-  void processMouseMoveEvents();
   void processMousePressedEvents();
   void commandsToApply();
 };

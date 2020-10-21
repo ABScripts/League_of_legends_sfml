@@ -9,7 +9,7 @@ class GameObjectEventPull
 {
 public:
   enum class EventTypes {
-    Shoot
+    RegisterInQuadTree
   };
 
   struct Event {

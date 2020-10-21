@@ -17,11 +17,6 @@ void TurnDown::execute(ControlableEntity *entity, const sf::Time &time) {
   entity->turnDown(time);
 }
 
-void MouseMoved::execute(ControlableEntity *entity, const sf::Time &time)
-{
-  entity->mouseMoved(time, mMousePosition);
-}
-
 void MousePressed::execute(ControlableEntity *entity, const sf::Time &time)
 {
   entity->mousePressed(time, mMousePosition);

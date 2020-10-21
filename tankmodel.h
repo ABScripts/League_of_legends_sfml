@@ -18,8 +18,9 @@ public:
     Width = 100,
     Height = 100,
     MoveSpeed = 250,
-    RotationSpeed = 100,
-    Health = 500
+    RotationSpeed = 90,
+    Health = 500,
+    TimeToNextTankRotation = 500 // in miliseconds
   };
 
 public:
@@ -31,6 +32,7 @@ public:
   unsigned char RotationSpeed() const;
   std::string towerTexturePath() const;
   std::string bodyTexturePath() const;
+  int timeToNextTankRotation() const;
 
   void setHealth(int health);
   int health() const;
@@ -45,6 +47,7 @@ private:
   short int mHeight;
   unsigned char mRotationSpeed;
   unsigned char mMoveSpeed;
+  int mTimeToNextTankRotation;
   std::string mBodyTexturePath;
   std::string mTowerTexturePath;
   TankType mBodyType;

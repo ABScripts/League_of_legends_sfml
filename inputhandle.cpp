@@ -12,7 +12,6 @@ InputHandle::InputHandle()
     mTurnDownButton(new TurnDown()),
     mTurnLeftButton(new TurnLeft()),
     mTurnRightButton(new TurnRight()),
-    mMouseMoved(new MouseMoved()),
     mMousePressed(new MousePressed())
 {
   assert(mInputHandleInstanse == nullptr);
@@ -27,9 +26,6 @@ std::shared_ptr<std::list<Command *> > InputHandle::processEvents() {
     }
   else if (mEvent.type == sf::Event::KeyReleased) {
       processKeyReleasedEvents();
-    }
-  else if (mEvent.type == sf::Event::MouseMoved) {
-      processMouseMoveEvents();
     }
   else if (mEvent.type == sf::Event::MouseButtonPressed) {
       processMousePressedEvents();
@@ -57,12 +53,6 @@ void InputHandle::processKeyReleasedEvents() {
   if (it != mPressedKeyBuffer.end()) { // if this key pressing is active
       mPressedKeyBuffer.erase(it);
     }
-}
-
-void InputHandle::processMouseMoveEvents()
-{
- mMouseMoved->setMousePosition(sf::Vector2f(mEvent.mouseMove.x, mEvent.mouseMove.y));
- mCommands->push_back(mMouseMoved);
 }
 
 void InputHandle::processMousePressedEvents()
