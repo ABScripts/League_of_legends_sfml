@@ -19,11 +19,12 @@ SOURCES += \
         main.cpp \
         mathcore.cpp \
     mousecommand.cpp \
+    polygon.cpp \
     quadtree.cpp \
         tank.cpp \
         tankmodel.cpp \
         tanktowermodel.cpp \
-        tanktowerview.cpp \
+        tanktowerview.cpp
 
 HEADERS += \
     assetmanager.h \
@@ -38,11 +39,12 @@ HEADERS += \
     inputhandle.h \
     mathcore.h \
     mousecommand.h \
+    polygon.h \
     quadtree.h \
     tank.h \
     tankmodel.h \
     tanktowermodel.h \
-    tanktowerview.h \
+    tanktowerview.h
 
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/SFML/lib/ -lsfml-audio -lsfml-graphics -lsfml-network -lsfml-window -lsfml-system

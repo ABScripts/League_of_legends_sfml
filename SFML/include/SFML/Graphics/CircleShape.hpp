@@ -104,7 +104,7 @@ public:
     /// \return index-th point of the shape
     ///
     ////////////////////////////////////////////////////////////
-    virtual Vector2f getPoint(std::size_t index) const;
+    virtual Vector2<int> getPoint(std::size_t index) const;
 
 private:
 

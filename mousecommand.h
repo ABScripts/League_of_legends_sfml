@@ -8,12 +8,12 @@ class MouseCommand : public Command
 {
 public:
   void execute(ControlableEntity *, const sf::Time&) override;
-  void setMousePosition(const sf::Vertex &newPos) {
+  void setMousePosition(const sf::Vector2f &newPos) {
     mMousePosition = newPos;
   }
 
 protected:
-  sf::Vertex mMousePosition;
+  sf::Vector2f mMousePosition;
 };
 
 #endif // MOUSECOMMAND_H

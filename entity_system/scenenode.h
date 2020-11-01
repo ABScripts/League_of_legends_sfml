@@ -33,8 +33,13 @@ class SceneNode : public sf::Drawable, public sf::Transformable{
     virtual void applyCollisionToSelf(SceneNode *) {};
     bool isDestroyed() const;
 
+    virtual float width() const = 0;
+    virtual float height() const = 0;
+    virtual sf::Vector2f center() const = 0;
+
 protected:
     bool mIsDestroyed = false;
+
 
 protected:
     sf::Transform getWorldTransform() const;

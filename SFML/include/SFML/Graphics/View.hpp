@@ -67,7 +67,7 @@ public:
     /// \param size   Size of zone to display
     ///
     ////////////////////////////////////////////////////////////
-    View(const Vector2f& center, const Vector2f& size);
+    View(const Vector2<int>& center, const Vector2<int>& size);
 
     ////////////////////////////////////////////////////////////
     /// \brief Set the center of the view
@@ -88,7 +88,7 @@ public:
     /// \see setSize, getCenter
     ///
     ////////////////////////////////////////////////////////////
-    void setCenter(const Vector2f& center);
+    void setCenter(const Vector2<int>& center);
 
     ////////////////////////////////////////////////////////////
     /// \brief Set the size of the view
@@ -109,7 +109,7 @@ public:
     /// \see setCenter, getCenter
     ///
     ////////////////////////////////////////////////////////////
-    void setSize(const Vector2f& size);
+    void setSize(const Vector2<int>& size);
 
     ////////////////////////////////////////////////////////////
     /// \brief Set the orientation of the view
@@ -160,7 +160,7 @@ public:
     /// \see getSize, setCenter
     ///
     ////////////////////////////////////////////////////////////
-    const Vector2f& getCenter() const;
+    const Vector2<int>& getCenter() const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Get the size of the view
@@ -170,7 +170,7 @@ public:
     /// \see getCenter, setSize
     ///
     ////////////////////////////////////////////////////////////
-    const Vector2f& getSize() const;
+    const Vector2<int>& getSize() const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Get the current orientation of the view
@@ -211,7 +211,7 @@ public:
     /// \see setCenter, rotate, zoom
     ///
     ////////////////////////////////////////////////////////////
-    void move(const Vector2f& offset);
+    void move(const Vector2<int>& offset);
 
     ////////////////////////////////////////////////////////////
     /// \brief Rotate the view relatively to its current orientation
@@ -269,8 +269,8 @@ private:
     ////////////////////////////////////////////////////////////
     // Member data
     ////////////////////////////////////////////////////////////
-    Vector2f          m_center;              ///< Center of the view, in scene coordinates
-    Vector2f          m_size;                ///< Size of the view, in scene coordinates
+    Vector2<int>          m_center;              ///< Center of the view, in scene coordinates
+    Vector2<int>          m_size;                ///< Size of the view, in scene coordinates
     float             m_rotation;            ///< Angle of rotation of the view rectangle, in degrees
     FloatRect         m_viewport;            ///< Viewport rectangle, expressed as a factor of the render-target's size
     mutable Transform m_transform;           ///< Precomputed projection transform corresponding to the view

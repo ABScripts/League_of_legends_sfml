@@ -13,7 +13,7 @@ EQ            = =
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB -DQT_QML_DEBUG
+DEFINES       = -DUNICODE -D_UNICODE -DWIN32 -DMINGW_HAS_SECURE_API=1 -DQT_NO_DEBUG -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -fno-keep-inline-dllexport -O2 -Wall -Wextra -Wextra $(DEFINES)
 CXXFLAGS      = -fno-keep-inline-dllexport -O2 -std=gnu++1z -Wall -Wextra -Wextra -fexceptions -mthreads $(DEFINES)
 INCPATH       = -I. -ISFML\include -IC:\Qt\5.15.0\mingw81_64\include -IC:\Qt\5.15.0\mingw81_64\include\QtGui -IC:\Qt\5.15.0\mingw81_64\include\QtANGLE -IC:\Qt\5.15.0\mingw81_64\include\QtCore -Irelease -I/include -IC:\Qt\5.15.0\mingw81_64\mkspecs\win32-g++ 
@@ -66,6 +66,7 @@ SOURCES       = entity_system\controlableentity.cpp \
 		main.cpp \
 		mathcore.cpp \
 		mousecommand.cpp \
+		polygon.cpp \
 		quadtree.cpp \
 		tank.cpp \
 		tankmodel.cpp \
@@ -87,6 +88,7 @@ OBJECTS       = release/controlableentity.o \
 		release/main.o \
 		release/mathcore.o \
 		release/mousecommand.o \
+		release/polygon.o \
 		release/quadtree.o \
 		release/tank.o \
 		release/tankmodel.o \
@@ -109,6 +111,7 @@ DIST          = entity_system/test_entity_system.pri \
 		inputhandle.h \
 		mathcore.h \
 		mousecommand.h \
+		polygon.h \
 		quadtree.h \
 		tank.h \
 		tankmodel.h \
@@ -129,6 +132,7 @@ DIST          = entity_system/test_entity_system.pri \
 		main.cpp \
 		mathcore.cpp \
 		mousecommand.cpp \
+		polygon.cpp \
 		quadtree.cpp \
 		tank.cpp \
 		tankmodel.cpp \
@@ -148,15 +152,15 @@ release/League_of_tanks_sfmlbare.exe: C:/Qt/5.15.0/mingw81_64/lib/libQt5Gui.a C:
 	$(LINKER) $(LFLAGS) -o $(DESTDIR_TARGET) @object_script.League_of_tanks_sfmlbare.Release  $(LIBS)
 
 qmake: FORCE
-	@$(QMAKE) -o Makefile.Release League_of_tanks_sfmlbare.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
+	@$(QMAKE) -o Makefile.Release League_of_tanks_sfmlbare.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
 
 qmake_all: FORCE
 
 dist:
-	$(ZIP) League_of_tanks_sfmlbare.zip $(SOURCES) $(DIST) League_of_tanks_sfmlbare.pro C:\Qt\5.15.0\mingw81_64\mkspecs\features\spec_pre.prf C:\Qt\5.15.0\mingw81_64\mkspecs\qdevice.pri C:\Qt\5.15.0\mingw81_64\mkspecs\features\device_config.prf C:\Qt\5.15.0\mingw81_64\mkspecs\common\sanitize.conf C:\Qt\5.15.0\mingw81_64\mkspecs\common\gcc-base.conf C:\Qt\5.15.0\mingw81_64\mkspecs\common\g++-base.conf C:\Qt\5.15.0\mingw81_64\mkspecs\common\angle.conf C:\Qt\5.15.0\mingw81_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\5.15.0\mingw81_64\mkspecs\common\windows-vulkan.conf C:\Qt\5.15.0\mingw81_64\mkspecs\common\g++-win32.conf C:\Qt\5.15.0\mingw81_64\mkspecs\common\windows-desktop.conf C:\Qt\5.15.0\mingw81_64\mkspecs\qconfig.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\features\qt_functions.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\qt_config.prf C:\Qt\5.15.0\mingw81_64\mkspecs\win32-g++\qmake.conf C:\Qt\5.15.0\mingw81_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\5.15.0\mingw81_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\toolchain.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\default_pre.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\win32\default_pre.prf entity_system\entity_system.pri C:\Qt\5.15.0\mingw81_64\mkspecs\features\resolve_config.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\default_post.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\build_pass.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\qt.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\resources_functions.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\resources.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\moc.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\win32\opengl.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\win32\console.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\qml_debug.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\precompile_header.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\warn_on.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\qmake_use.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\file_copies.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\testcase_targets.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\exceptions.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\yacc.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\lex.prf League_of_tanks_sfmlbare.pro C:\Qt\5.15.0\mingw81_64\lib\Qt5Gui.prl C:\Qt\5.15.0\mingw81_64\lib\Qt5Core.prl   C:\Qt\5.15.0\mingw81_64\mkspecs\features\data\dummy.cpp entity_system\controlableentity.h entity_system\entity.h entity_system\scenenode.h assetmanager.h bullet.h bulletmodel.h command.h commandsimplementation.h game.h gamemodel.h gameobjecteventpull.h gamewindow.h inputhandle.h mathcore.h mousecommand.h quadtree.h tank.h tankmodel.h tanktowermodel.h tanktowerview.h  entity_system\controlableentity.cpp entity_system\entity.cpp entity_system\scenenode.cpp assetmanager.cpp bullet.cpp bulletmodel.cpp command.cpp commandsimplementation.cpp game.cpp gamemodel.cpp gameobjecteventpull.cpp gamewindow.cpp inputhandle.cpp main.cpp mathcore.cpp mousecommand.cpp quadtree.cpp tank.cpp tankmodel.cpp tanktowermodel.cpp tanktowerview.cpp     
+	$(ZIP) League_of_tanks_sfmlbare.zip $(SOURCES) $(DIST) League_of_tanks_sfmlbare.pro C:\Qt\5.15.0\mingw81_64\mkspecs\features\spec_pre.prf C:\Qt\5.15.0\mingw81_64\mkspecs\qdevice.pri C:\Qt\5.15.0\mingw81_64\mkspecs\features\device_config.prf C:\Qt\5.15.0\mingw81_64\mkspecs\common\sanitize.conf C:\Qt\5.15.0\mingw81_64\mkspecs\common\gcc-base.conf C:\Qt\5.15.0\mingw81_64\mkspecs\common\g++-base.conf C:\Qt\5.15.0\mingw81_64\mkspecs\common\angle.conf C:\Qt\5.15.0\mingw81_64\mkspecs\features\win32\windows_vulkan_sdk.prf C:\Qt\5.15.0\mingw81_64\mkspecs\common\windows-vulkan.conf C:\Qt\5.15.0\mingw81_64\mkspecs\common\g++-win32.conf C:\Qt\5.15.0\mingw81_64\mkspecs\common\windows-desktop.conf C:\Qt\5.15.0\mingw81_64\mkspecs\qconfig.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3danimation.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3danimation_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dcore.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dcore_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dextras.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dextras_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dinput.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dinput_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dlogic.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dlogic_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquick.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquick_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickanimation.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickanimation_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickextras.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickextras_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickinput.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickinput_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickrender.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickrender_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickscene2d.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3dquickscene2d_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3drender.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_3drender_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_accessibility_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_axbase.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_axbase_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_axcontainer.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_axcontainer_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_axserver.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_axserver_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_bluetooth.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_bluetooth_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_bootstrap_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_concurrent.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_concurrent_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_core.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_core_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_dbus.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_dbus_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_designer.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_designer_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_designercomponents_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_devicediscovery_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_edid_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_egl_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_eventdispatcher_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_fb_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_fontdatabase_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_gamepad.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_gamepad_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_gui.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_gui_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_help.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_help_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_location.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_location_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_multimedia.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_multimedia_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_multimediawidgets.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_multimediawidgets_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_network.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_network_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_nfc.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_nfc_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_opengl.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_opengl_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_openglextensions.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_openglextensions_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_packetprotocol_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_platformcompositor_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_positioning.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_positioning_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_positioningquick.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_positioningquick_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_printsupport.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_printsupport_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qml.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qml_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmldebug_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmldevtools_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmlmodels.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmlmodels_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmltest.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmltest_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qmlworkerscript_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quick.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quick_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quickcontrols2_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quickparticles_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quickshapes_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quicktemplates2_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quickwidgets.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_quickwidgets_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_remoteobjects.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_remoteobjects_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_repparser.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_repparser_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_scxml.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_scxml_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_sensors.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_sensors_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_serialbus.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_serialbus_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_serialport.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_serialport_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_sql.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_sql_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_svg.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_svg_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_testlib.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_testlib_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_texttospeech.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_texttospeech_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_theme_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_uiplugin.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_uitools.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_uitools_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_vulkan_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_webchannel.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_webchannel_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_websockets.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_websockets_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_widgets.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_widgets_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_windowsuiautomation_support_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_winextras.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_winextras_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_xml.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_xml_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_xmlpatterns.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_xmlpatterns_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\modules\qt_lib_zlib_private.pri C:\Qt\5.15.0\mingw81_64\mkspecs\features\qt_functions.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\qt_config.prf C:\Qt\5.15.0\mingw81_64\mkspecs\win32-g++\qmake.conf C:\Qt\5.15.0\mingw81_64\mkspecs\features\spec_post.prf .qmake.stash C:\Qt\5.15.0\mingw81_64\mkspecs\features\exclusive_builds.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\toolchain.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\default_pre.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\win32\default_pre.prf entity_system\entity_system.pri C:\Qt\5.15.0\mingw81_64\mkspecs\features\resolve_config.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\exclusive_builds_post.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\default_post.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\build_pass.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\qt.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\resources_functions.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\resources.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\moc.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\win32\opengl.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\win32\console.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\qtquickcompiler.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\precompile_header.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\warn_on.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\qmake_use.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\file_copies.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\testcase_targets.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\exceptions.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\yacc.prf C:\Qt\5.15.0\mingw81_64\mkspecs\features\lex.prf League_of_tanks_sfmlbare.pro C:\Qt\5.15.0\mingw81_64\lib\Qt5Gui.prl C:\Qt\5.15.0\mingw81_64\lib\Qt5Core.prl   C:\Qt\5.15.0\mingw81_64\mkspecs\features\data\dummy.cpp entity_system\controlableentity.h entity_system\entity.h entity_system\scenenode.h assetmanager.h bullet.h bulletmodel.h command.h commandsimplementation.h game.h gamemodel.h gameobjecteventpull.h gamewindow.h inputhandle.h mathcore.h mousecommand.h polygon.h quadtree.h tank.h tankmodel.h tanktowermodel.h tanktowerview.h  entity_system\controlableentity.cpp entity_system\entity.cpp entity_system\scenenode.cpp assetmanager.cpp bullet.cpp bulletmodel.cpp command.cpp commandsimplementation.cpp game.cpp gamemodel.cpp gameobjecteventpull.cpp gamewindow.cpp inputhandle.cpp main.cpp mathcore.cpp mousecommand.cpp polygon.cpp quadtree.cpp tank.cpp tankmodel.cpp tanktowermodel.cpp tanktowerview.cpp     
 
 clean: compiler_clean 
-	-$(DEL_FILE) release\controlableentity.o release\entity.o release\scenenode.o release\assetmanager.o release\bullet.o release\bulletmodel.o release\command.o release\commandsimplementation.o release\game.o release\gamemodel.o release\gameobjecteventpull.o release\gamewindow.o release\inputhandle.o release\main.o release\mathcore.o release\mousecommand.o release\quadtree.o release\tank.o release\tankmodel.o release\tanktowermodel.o release\tanktowerview.o
+	-$(DEL_FILE) release\controlableentity.o release\entity.o release\scenenode.o release\assetmanager.o release\bullet.o release\bulletmodel.o release\command.o release\commandsimplementation.o release\game.o release\gamemodel.o release\gameobjecteventpull.o release\gamewindow.o release\inputhandle.o release\main.o release\mathcore.o release\mousecommand.o release\polygon.o release\quadtree.o release\tank.o release\tankmodel.o release\tanktowermodel.o release\tanktowerview.o
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash
@@ -415,10 +419,11 @@ release/entity.o: entity_system/entity.cpp entity_system/entity.h \
 		assetmanager.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\entity.o entity_system\entity.cpp
 
-release/scenenode.o: entity_system/scenenode.cpp entity_system/scenenode.h \
-		SFML/include/SFML/Graphics/Drawable.hpp \
+release/scenenode.o: entity_system/scenenode.cpp tank.h \
+		SFML/include/SFML/Graphics/Sprite.hpp \
 		SFML/include/SFML/Graphics/Export.hpp \
 		SFML/include/SFML/Config.hpp \
+		SFML/include/SFML/Graphics/Drawable.hpp \
 		SFML/include/SFML/Graphics/RenderStates.hpp \
 		SFML/include/SFML/Graphics/BlendMode.hpp \
 		SFML/include/SFML/Graphics/Transform.hpp \
@@ -427,6 +432,11 @@ release/scenenode.o: entity_system/scenenode.cpp entity_system/scenenode.h \
 		SFML/include/SFML/System/Vector2.inl \
 		SFML/include/SFML/Graphics/Rect.inl \
 		SFML/include/SFML/Graphics/Transformable.hpp \
+		SFML/include/SFML/Graphics/Vertex.hpp \
+		SFML/include/SFML/Graphics/Color.hpp \
+		entity_system/controlableentity.h \
+		entity_system/entity.h \
+		entity_system/scenenode.h \
 		SFML/include/SFML/System.hpp \
 		SFML/include/SFML/System/Clock.hpp \
 		SFML/include/SFML/System/Export.hpp \
@@ -515,13 +525,48 @@ release/scenenode.o: entity_system/scenenode.cpp entity_system/scenenode.h \
 		C:/Qt/5.15.0/mingw81_64/include/QtCore/qcontiguouscache.h \
 		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer.h \
 		C:/Qt/5.15.0/mingw81_64/include/QtCore/qsharedpointer_impl.h \
-		tank.h \
-		SFML/include/SFML/Graphics/Sprite.hpp \
-		SFML/include/SFML/Graphics/Vertex.hpp \
-		SFML/include/SFML/Graphics/Color.hpp \
-		entity_system/controlableentity.h \
-		entity_system/entity.h \
-		tankmodel.h
+		tankmodel.h \
+		SFML/include/SFML/Graphics.hpp \
+		SFML/include/SFML/Window.hpp \
+		SFML/include/SFML/Window/Clipboard.hpp \
+		SFML/include/SFML/Window/Export.hpp \
+		SFML/include/SFML/Window/Context.hpp \
+		SFML/include/SFML/Window/GlResource.hpp \
+		SFML/include/SFML/Window/ContextSettings.hpp \
+		SFML/include/SFML/Window/Cursor.hpp \
+		SFML/include/SFML/Window/Event.hpp \
+		SFML/include/SFML/Window/Joystick.hpp \
+		SFML/include/SFML/Window/Keyboard.hpp \
+		SFML/include/SFML/Window/Mouse.hpp \
+		SFML/include/SFML/Window/Sensor.hpp \
+		SFML/include/SFML/Window/Touch.hpp \
+		SFML/include/SFML/Window/VideoMode.hpp \
+		SFML/include/SFML/Window/Window.hpp \
+		SFML/include/SFML/Window/WindowHandle.hpp \
+		SFML/include/SFML/Window/WindowStyle.hpp \
+		SFML/include/SFML/Graphics/CircleShape.hpp \
+		SFML/include/SFML/Graphics/Shape.hpp \
+		SFML/include/SFML/Graphics/VertexArray.hpp \
+		SFML/include/SFML/Graphics/PrimitiveType.hpp \
+		SFML/include/SFML/Graphics/ConvexShape.hpp \
+		SFML/include/SFML/Graphics/Font.hpp \
+		SFML/include/SFML/Graphics/Glyph.hpp \
+		SFML/include/SFML/Graphics/Texture.hpp \
+		SFML/include/SFML/Graphics/Image.hpp \
+		SFML/include/SFML/Graphics/RectangleShape.hpp \
+		SFML/include/SFML/Graphics/RenderTarget.hpp \
+		SFML/include/SFML/Graphics/View.hpp \
+		SFML/include/SFML/Graphics/RenderTexture.hpp \
+		SFML/include/SFML/Graphics/RenderWindow.hpp \
+		SFML/include/SFML/Graphics/Shader.hpp \
+		SFML/include/SFML/Graphics/Glsl.hpp \
+		SFML/include/SFML/Graphics/Glsl.inl \
+		SFML/include/SFML/Graphics/Text.hpp \
+		SFML/include/SFML/Graphics/VertexBuffer.hpp \
+		mathcore.h \
+		polygon.h \
+		bullet.h \
+		bulletmodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\scenenode.o entity_system\scenenode.cpp
 
 release/assetmanager.o: assetmanager.cpp assetmanager.h \
@@ -648,6 +693,7 @@ release/bullet.o: bullet.cpp bullet.h \
 		bulletmodel.h \
 		assetmanager.h \
 		mathcore.h \
+		polygon.h \
 		SFML/include/SFML/Graphics/RenderTarget.hpp \
 		SFML/include/SFML/Graphics/View.hpp \
 		SFML/include/SFML/Graphics/PrimitiveType.hpp
@@ -1152,6 +1198,8 @@ release/gamewindow.o: gamewindow.cpp gamewindow.h \
 		tank.h \
 		entity_system/controlableentity.h \
 		tankmodel.h \
+		bullet.h \
+		bulletmodel.h \
 		gameobjecteventpull.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\gamewindow.o gamewindow.cpp
 
@@ -1259,7 +1307,8 @@ release/main.o: main.cpp game.h \
 		SFML/include/SFML/Graphics/VertexBuffer.hpp \
 		assetmanager.h \
 		gameobjecteventpull.h \
-		mathcore.h
+		mathcore.h \
+		polygon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o main.cpp
 
 release/mathcore.o: mathcore.cpp mathcore.h \
@@ -1269,6 +1318,7 @@ release/mathcore.o: mathcore.cpp mathcore.h \
 		SFML/include/SFML/Graphics/Color.hpp \
 		SFML/include/SFML/System/Vector2.hpp \
 		SFML/include/SFML/System/Vector2.inl \
+		polygon.h \
 		entity_system/controlableentity.h \
 		entity_system/entity.h \
 		entity_system/scenenode.h \
@@ -1381,6 +1431,11 @@ release/mousecommand.o: mousecommand.cpp mousecommand.h \
 		SFML/include/SFML/System/Vector2.hpp \
 		SFML/include/SFML/System/Vector2.inl
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mousecommand.o mousecommand.cpp
+
+release/polygon.o: polygon.cpp polygon.h \
+		SFML/include/SFML/System/Vector2.hpp \
+		SFML/include/SFML/System/Vector2.inl
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\polygon.o polygon.cpp
 
 release/quadtree.o: quadtree.cpp quadtree.h \
 		entity_system/entity.h \
@@ -1523,7 +1578,12 @@ release/quadtree.o: quadtree.cpp quadtree.h \
 		SFML/include/SFML/Graphics/Glsl.hpp \
 		SFML/include/SFML/Graphics/Glsl.inl \
 		SFML/include/SFML/Graphics/Text.hpp \
-		SFML/include/SFML/Graphics/VertexBuffer.hpp
+		SFML/include/SFML/Graphics/VertexBuffer.hpp \
+		bullet.h \
+		bulletmodel.h \
+		tank.h \
+		entity_system/controlableentity.h \
+		tankmodel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\quadtree.o quadtree.cpp
 
 release/tank.o: tank.cpp tank.h \
@@ -1636,6 +1696,7 @@ release/tank.o: tank.cpp tank.h \
 		tanktowerview.h \
 		assetmanager.h \
 		mathcore.h \
+		polygon.h \
 		bullet.h \
 		bulletmodel.h \
 		SFML/include/SFML/Graphics/RenderTarget.hpp \

@@ -30,10 +30,6 @@ private:
   std::vector<QuadTree*> mNodes;
   unsigned mLevel;
 
-  // test code
-  std::vector<sf::RectangleShape*> mRects;
-  //end test code
-
 private:
   void deallocate(); // deletes quadtree hierarchy
   void subdivide();  // create new four sub quadtrees

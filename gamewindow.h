@@ -19,14 +19,22 @@ public:
 
     void render();
     void handleInput();
-    const sf::Event &event() const;
     bool eventsHaveHappened();
     void update(const sf::Time &time);
+
+    const sf::Event &event() const;
+
 private:
     GameModel *m_gameModel_ptr;
     InputHandle *m_InputHandler;
     std::shared_ptr<std::list<Command*> > mCommands;
     std::vector<std::pair<SceneNode *, SceneNode *> > mCollisionPairs;
+
+private:
+    void updateGameModel(const sf::Time &time);
+    void processPullEvents();
+    void setPossibleCollisionPairs();
+    void processCollisions();
 };
 
 #endif // GAMEWINDOW_H

@@ -57,7 +57,7 @@ public:
     /// \param thePosition Vertex position
     ///
     ////////////////////////////////////////////////////////////
-    Vertex(const Vector2f& thePosition);
+    Vertex(const Vector2<int>& thePosition);
 
     ////////////////////////////////////////////////////////////
     /// \brief Construct the vertex from its position and color
@@ -68,7 +68,7 @@ public:
     /// \param theColor    Vertex color
     ///
     ////////////////////////////////////////////////////////////
-    Vertex(const Vector2f& thePosition, const Color& theColor);
+    Vertex(const Vector2<int>& thePosition, const Color& theColor);
 
     ////////////////////////////////////////////////////////////
     /// \brief Construct the vertex from its position and texture coordinates
@@ -79,7 +79,7 @@ public:
     /// \param theTexCoords Vertex texture coordinates
     ///
     ////////////////////////////////////////////////////////////
-    Vertex(const Vector2f& thePosition, const Vector2f& theTexCoords);
+    Vertex(const Vector2<int>& thePosition, const Vector2<int>& theTexCoords);
 
     ////////////////////////////////////////////////////////////
     /// \brief Construct the vertex from its position, color and texture coordinates
@@ -89,14 +89,14 @@ public:
     /// \param theTexCoords Vertex texture coordinates
     ///
     ////////////////////////////////////////////////////////////
-    Vertex(const Vector2f& thePosition, const Color& theColor, const Vector2f& theTexCoords);
+    Vertex(const Vector2<int>& thePosition, const Color& theColor, const Vector2<int>& theTexCoords);
 
     ////////////////////////////////////////////////////////////
     // Member data
     ////////////////////////////////////////////////////////////
-    Vector2f  position;  ///< 2D position of the vertex
+    Vector2<int>  position;  ///< 2D position of the vertex
     Color     color;     ///< Color of the vertex
-    Vector2f  texCoords; ///< Coordinates of the texture's pixel to map to the vertex
+    Vector2<int>  texCoords; ///< Coordinates of the texture's pixel to map to the vertex
 };
 
 } // namespace sf

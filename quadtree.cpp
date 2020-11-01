@@ -1,5 +1,7 @@
 #include "quadtree.h"
 #include <QDebug>
+#include "bullet.h"
+#include "tank.h"
 
 unsigned QuadTree::MAX_LEVEL = 5;
 
@@ -68,14 +70,20 @@ void QuadTree::getGameObjectsByTreeLayers(std::vector<std::vector<SceneNode *> >
 {
   if (hasChildren())
     for (auto & node : mNodes) {
-      if (node->hasChildren()) {
+      //if (node->hasChildren()) {
           node->getGameObjectsByTreeLayers(gameObjectsByLayers);
-        }
+        //}
       }
 
   if (!mObjectsIn.empty()) {
       std::vector<SceneNode *> objectsInNode;
       for (auto & gameObject : mObjectsIn) {
+//          if (dynamic_cast<Bullet*>(gameObject)) {
+//            qDebug() << "Bullet casted on level: " << mLevel << "\n";
+//            }
+//          else if (dynamic_cast<Tank*>(gameObject)) {
+//            qDebug() << "Tank casted on level: " << mLevel << "\n";
+//            }
              objectsInNode.push_back(gameObject);
         }
       gameObjectsByLayers.push_back(objectsInNode);
@@ -123,9 +131,6 @@ void QuadTree::deallocate()
       node->deallocate();
     }
   mObjectsIn.clear();
-  for (std::vector<sf::RectangleShape*>::iterator it = mRects.begin(); it != mRects.end(); ++it) {
-     mRects.erase(it);
-    }
 }
 
 /*

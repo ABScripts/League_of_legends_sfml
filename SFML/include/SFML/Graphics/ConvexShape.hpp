@@ -88,7 +88,7 @@ public:
     /// \see getPoint
     ///
     ////////////////////////////////////////////////////////////
-    void setPoint(std::size_t index, const Vector2f& point);
+    void setPoint(std::size_t index, const Vector2<int>& point);
 
     ////////////////////////////////////////////////////////////
     /// \brief Get the position of a point
@@ -105,14 +105,14 @@ public:
     /// \see setPoint
     ///
     ////////////////////////////////////////////////////////////
-    virtual Vector2f getPoint(std::size_t index) const;
+    virtual Vector2<int> getPoint(std::size_t index) const;
 
 private:
 
     ////////////////////////////////////////////////////////////
     // Member data
     ////////////////////////////////////////////////////////////
-    std::vector<Vector2f> m_points; ///< Points composing the convex polygon
+    std::vector<Vector2<int>> m_points; ///< Points composing the convex polygon
 };
 
 } // namespace sf

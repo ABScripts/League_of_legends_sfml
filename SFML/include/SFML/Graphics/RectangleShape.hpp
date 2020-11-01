@@ -48,7 +48,7 @@ public:
     /// \param size Size of the rectangle
     ///
     ////////////////////////////////////////////////////////////
-    explicit RectangleShape(const Vector2f& size = Vector2f(0, 0));
+    explicit RectangleShape(const Vector2<int>& size = Vector2<int>(0, 0));
 
     ////////////////////////////////////////////////////////////
     /// \brief Set the size of the rectangle
@@ -58,7 +58,7 @@ public:
     /// \see getSize
     ///
     ////////////////////////////////////////////////////////////
-    void setSize(const Vector2f& size);
+    void setSize(const Vector2<int>& size);
 
     ////////////////////////////////////////////////////////////
     /// \brief Get the size of the rectangle
@@ -68,7 +68,7 @@ public:
     /// \see setSize
     ///
     ////////////////////////////////////////////////////////////
-    const Vector2f& getSize() const;
+    const Vector2<int>& getSize() const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Get the number of points defining the shape
@@ -92,14 +92,14 @@ public:
     /// \return index-th point of the shape
     ///
     ////////////////////////////////////////////////////////////
-    virtual Vector2f getPoint(std::size_t index) const;
+    virtual Vector2<int> getPoint(std::size_t index) const;
 
 private:
 
     ////////////////////////////////////////////////////////////
     // Member data
     ////////////////////////////////////////////////////////////
-    Vector2f m_size; ///< Size of the rectangle
+    Vector2<int> m_size; ///< Size of the rectangle
 };
 
 } // namespace sf

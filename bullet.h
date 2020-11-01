@@ -9,17 +9,19 @@ class Bullet : public Entity
 {
 public:
   Bullet();
-  Bullet(double angle);
-
+  Bullet(double angle, sf::Vector2f spawnPoint);
   void drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const override;
   void updateCurrent(const sf::Time &time) override;
   int getDamage() const;
   void destroy();
 
+  float width() const;
+  float height() const;
+
 private:
   BulletModel mBulletModel;
 private:
-  void setupBullet();
+  void setupBullet(sf::Vector2f spawnPoint);
 };
 
 #endif // BULLET_H

@@ -106,7 +106,7 @@ public:
     /// \return Transformed point
     ///
     ////////////////////////////////////////////////////////////
-    Vector2f transformPoint(float x, float y) const;
+    Vector2<int> transformPoint(float x, float y) const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Transform a 2D point
@@ -116,7 +116,7 @@ public:
     /// \return Transformed point
     ///
     ////////////////////////////////////////////////////////////
-    Vector2f transformPoint(const Vector2f& point) const;
+    Vector2<int> transformPoint(const Vector2<int>& point) const;
 
     ////////////////////////////////////////////////////////////
     /// \brief Transform a rectangle
@@ -185,7 +185,7 @@ public:
     /// \see rotate, scale
     ///
     ////////////////////////////////////////////////////////////
-    Transform& translate(const Vector2f& offset);
+    Transform& translate(const Vector2<int>& offset);
 
     ////////////////////////////////////////////////////////////
     /// \brief Combine the current transform with a rotation
@@ -255,7 +255,7 @@ public:
     /// \see translate, scale
     ///
     ////////////////////////////////////////////////////////////
-    Transform& rotate(float angle, const Vector2f& center);
+    Transform& rotate(float angle, const Vector2<int>& center);
 
     ////////////////////////////////////////////////////////////
     /// \brief Combine the current transform with a scaling
@@ -321,7 +321,7 @@ public:
     /// \see translate, rotate
     ///
     ////////////////////////////////////////////////////////////
-    Transform& scale(const Vector2f& factors);
+    Transform& scale(const Vector2<int>& factors);
 
     ////////////////////////////////////////////////////////////
     /// \brief Combine the current transform with a scaling
@@ -346,7 +346,7 @@ public:
     /// \see translate, rotate
     ///
     ////////////////////////////////////////////////////////////
-    Transform& scale(const Vector2f& factors, const Vector2f& center);
+    Transform& scale(const Vector2<int>& factors, const Vector2<int>& center);
 
     ////////////////////////////////////////////////////////////
     // Static member data
@@ -401,7 +401,7 @@ SFML_GRAPHICS_API Transform& operator *=(Transform& left, const Transform& right
 /// \return New transformed point
 ///
 ////////////////////////////////////////////////////////////
-SFML_GRAPHICS_API Vector2f operator *(const Transform& left, const Vector2f& right);
+SFML_GRAPHICS_API Vector2<int> operator *(const Transform& left, const Vector2<int>& right);
 
 ////////////////////////////////////////////////////////////
 /// \relates sf::Transform

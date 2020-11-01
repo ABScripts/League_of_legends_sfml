@@ -14,12 +14,12 @@ class Tank : public ControlableEntity
 private:
   TankModel * mTankModel; // should be replaced in future with unique ptr
   TankTowerView * mTowerView;
-  sf::Vector2<double> mVelocityVector;
   bool mRotationIsAllowed;
   sf::Time mTimeToNextRotation;
   std::shared_ptr<std::list<Command*> > mCommands;
   int mId_tempVar; // test variable
-  sf::Vector2f mCenterPoint;
+  sf::Vector2f mVelocityVector;
+  sf::Vector2f mTrackTowerAngle;
 
 private:
   void setupTank(float x, float y);
@@ -28,8 +28,9 @@ private:
   void applyRotation(int rotationSpeed);
 
 public:
+    mutable float mW_t, mH_t;
   Tank(Entity * parent = nullptr, TankModel::TankType bodyType  = TankModel::TankType::Self, TankModel::TankType towerType = TankModel::TankType::Self,
-       double xposition = 0, double yposition = 0);
+       float x = 0, float y = 0);
   virtual void drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const override;
   virtual void updateCurrent(const sf::Time & time) override;
   virtual void applyCollisionToSelf(SceneNode *collidedObj = nullptr) override;
@@ -39,13 +40,16 @@ public:
   void turnRight(const sf::Time &time) override;
   void turnUp(const sf::Time &time) override;
   void turnDown(const sf::Time &time) override;
-  void mousePressed(const sf::Time &time, const sf::Vertex &mousePosition) override;
+  void mousePressed(const sf::Time &time, const sf::Vector2f &mousePosition) override;
+  void mouseMoved(const sf::Time &time, const sf::Vector2f &mousePosition) override;
+
+  float width() const override;
+  float height() const override;
 
   void setCommands(const std::shared_ptr<std::list<Command *> > &commands);
   std::shared_ptr<std::list<Command *> > getCommands() const;
 
   friend class TankTowerView;
-  sf::Vector2f getCenterPoint() const;
 };
 
 #endif // TANK_H

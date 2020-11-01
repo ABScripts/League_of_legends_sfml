@@ -583,7 +583,7 @@ public:
     /// \deprecated Use setUniform(const std::string&, const Glsl::Vec2&) instead.
     ///
     ////////////////////////////////////////////////////////////
-    SFML_DEPRECATED void setParameter(const std::string& name, const Vector2f& vector);
+    SFML_DEPRECATED void setParameter(const std::string& name, const Vector2<int>& vector);
 
     ////////////////////////////////////////////////////////////
     /// \brief Change a 3-components vector parameter of the shader

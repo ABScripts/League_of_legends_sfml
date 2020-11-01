@@ -1,20 +1,20 @@
 #include "gamemodel.h"
 #include "tank.h"
 
-GameModel::GameModel(sf::Rect<double> winRect, sf::RenderWindow & window)
+GameModel::GameModel(sf::RenderWindow & window)
   : mLayers(
     {{Layers::MapLayer, new Entity()},
     {Layers::BattlefieldLayer, new Entity()}
     })
-  , mPlayer(new Tank(mLayers[Layers::MapLayer]))
-  , mWindowRect(winRect)
-  , mQuadTree(new QuadTree(winRect.left, winRect.top, winRect.width, winRect.height))
+  , mPlayer(new Tank(mLayers[Layers::MapLayer], TankModel::TankType::Self, TankModel::TankType::Self, 50, 50))
+  , mQuadTree(new QuadTree(0, 0, window.getSize().x, window.getSize().y))
 {
-//  for (int i = 100; i < 1000; i += 100) {
-    mEnemies.push_back(new Tank(mLayers[Layers::MapLayer], TankModel::TankType::Enemy, TankModel::TankType::Enemy, 600, 500));
-  //}
+ for (int i = 100; i < 500; i += 200) {
+  //qDebug() << "SHITTT\n";
+  mEnemies.push_back(new Tank(mLayers[Layers::MapLayer], TankModel::TankType::Enemy, TankModel::TankType::Enemy, i + 200, i + 200));
+ }
 
-  update(window);
+    updateQuadTree(window);
 }
 
 GameModel::~GameModel()
@@ -26,16 +26,6 @@ GameModel::~GameModel()
 
 const std::map<GameModel::Layers, Entity *> &GameModel::getLayers() const {
   return mLayers;
-}
-
-Tank *GameModel::getPlayer() const
-{
-  return mPlayer;
-}
-
-const std::vector<SceneNode *> &GameModel::getEnemies() const
-{
-  return mEnemies;
 }
 
 void GameModel::retrieve(std::vector<SceneNode *> &nd, SceneNode *node)
@@ -53,15 +43,26 @@ void GameModel::getGameObjectsByTreeLayers(std::vector<std::vector<SceneNode *> 
   mQuadTree->getGameObjectsByTreeLayers(gameObjectByLayers);
 }
 
-void GameModel::update(sf::RenderWindow &window)
+void GameModel::updateQuadTree(sf::RenderWindow &window)
 {
+  sf::Vector2u winRect = window.getSize();
+
   if (mQuadTree)
-    delete mQuadTree; // delete old one and then create brand new
-  mQuadTree = new QuadTree(mWindowRect.left, mWindowRect.top, mWindowRect.width, mWindowRect.height);
-  // forming the quad tree structure
+    delete mQuadTree;
+  mQuadTree = new QuadTree(0, 0, winRect.x, winRect.y);
   for (SceneNode *tank : mEnemies) {
     mQuadTree->insert(tank, window);
     }
   mQuadTree->insert(mPlayer, window);
-  // end forming the quad tree structure
+}
+
+void GameModel::update(sf::RenderWindow &window, std::shared_ptr<std::list<Command*> > playerCommands, const sf::Time &time)
+{
+  mPlayer->update(time, playerCommands);
+
+  for (auto & layer : mLayers) {
+      layer.second->update(time);
+    }
+
+  updateQuadTree(window);
 }

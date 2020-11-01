@@ -4,21 +4,23 @@
 #include "command.h"
 #include "entity_system/entity.h"
 #include "tank.h"
+#include "bullet.h"
 #include "gameobjecteventpull.h"
 
 class Event;
-
-GameWindow::~GameWindow()
-{
-  delete m_gameModel_ptr;
-}
 
 GameWindow::GameWindow(const sf::String &title, sf::Uint32 style, const sf::ContextSettings &settings)
   : m_InputHandler(new InputHandle())
 {
     sf::VideoMode videoMode = sf::VideoMode::getDesktopMode();
     create(videoMode, title, style, settings);
-    m_gameModel_ptr = new GameModel(sf::Rect<double>(0, 0, videoMode.width, videoMode.height), *this); // the map size should be passed
+    m_gameModel_ptr = new GameModel(*this); // the map size should be passed
+}
+
+GameWindow::~GameWindow()
+{
+  delete m_gameModel_ptr;
+  delete m_InputHandler;
 }
 
 void GameWindow::render()
@@ -39,27 +41,15 @@ const sf::Event &GameWindow::event() const
   return m_InputHandler->event();
 }
 
-bool GameWindow::eventsHaveHappened()
+void GameWindow::updateGameModel(const sf::Time &time)
 {
-  return sf::RenderWindow::pollEvent(m_InputHandler->event());
+  m_gameModel_ptr->update(*this, mCommands, time);
 }
-#include <iostream>
-void GameWindow::update(const sf::Time &time)
+
+void GameWindow::processPullEvents()
 {
   using EventType = GameObjectEventPull::EventTypes;
 
-  m_gameModel_ptr->update(*this); // consider moving all the work below to the update game model`s function
-
-  Tank * playerTank = m_gameModel_ptr->getPlayer();
-  playerTank->update(time, mCommands);
-
-  for (auto & layer : m_gameModel_ptr->getLayers()) {
-
-      layer.second->update(time);
-
-    }
-
-  // proceed event pull
   for (auto event = GameObjectEventPull::begin();
        event != GameObjectEventPull::end();
        event = GameObjectEventPull::increase())
@@ -68,23 +58,30 @@ void GameWindow::update(const sf::Time &time)
           m_gameModel_ptr->insertInQuadTree(event->caller(), *this);
         }
     }
+}
 
-    std::vector<std::vector<SceneNode*>> objectsInTreeLayers;
-    m_gameModel_ptr->getGameObjectsByTreeLayers(objectsInTreeLayers);
+void GameWindow::setPossibleCollisionPairs()
+{
+  std::vector<std::vector<SceneNode*>> objectsInTreeLayers;
+  m_gameModel_ptr->getGameObjectsByTreeLayers(objectsInTreeLayers);
 
-    for (int i = 0; i < objectsInTreeLayers.size(); ++i) {
-        m_gameModel_ptr->retrieve(objectsInTreeLayers[i], objectsInTreeLayers[i][0]);
-      }
+  for (size_t i = 0; i < objectsInTreeLayers.size(); ++i) {
+      m_gameModel_ptr->retrieve(objectsInTreeLayers[i], objectsInTreeLayers[i][0]);
+    }
 
-    for (auto & subObjectCollection : objectsInTreeLayers) {
-        for (size_t i = 0; i < subObjectCollection.size(); ++i) {
-            for (size_t j = 0; j < subObjectCollection.size(); ++j) {
-                subObjectCollection[i]->checkNodeCollisions(subObjectCollection[j], mCollisionPairs);
-              }
-          }
-      }
+  for (auto & subObjectCollection : objectsInTreeLayers) {
+      for (size_t i = 0; i < subObjectCollection.size(); ++i) {
+          for (size_t j = 0; j < subObjectCollection.size(); ++j) {
+              subObjectCollection[i]->checkNodeCollisions(subObjectCollection[j], mCollisionPairs);
+            }
+        }
+    }
+}
 
-  // Collision processings...
+void GameWindow::processCollisions()
+{
+  setPossibleCollisionPairs();
+
   for (auto &collisionPair : mCollisionPairs) {
     if (!collisionPair.first->isDestroyed() && !collisionPair.second->isDestroyed()) {
         collisionPair.second->applyCollisionToSelf(collisionPair.first);
@@ -92,6 +89,18 @@ void GameWindow::update(const sf::Time &time)
     }
 
   mCollisionPairs.clear();
+}
+
+bool GameWindow::eventsHaveHappened()
+{
+  return sf::RenderWindow::pollEvent(m_InputHandler->event());
+}
+
+void GameWindow::update(const sf::Time &time)
+{
+  updateGameModel(time);
+  processPullEvents();
+  processCollisions();
 }
 
 

@@ -20,14 +20,12 @@ void TankTowerView::drawCurrent(sf::RenderTarget &target, sf::RenderStates state
   target.draw(mSprite, states);
 }
 
-Bullet *TankTowerView::shootBullet(const sf::Time &time, const sf::Vertex &spawnPosition, int rotation)
+Bullet *TankTowerView::shootBullet(const sf::Time &time, const sf::Vector2f &spawnPosition, int rotation)
 {
   if (mGunIsReady) {
       mGunIsReady = false;
       mRechargeTime = sf::seconds(m_TowerModel->rechargeTime());
-      Bullet * bullet = new Bullet(rotation);
-      bullet->setPosition(spawnPosition.position.x, spawnPosition.position.y);
-      return bullet;
+      return (new Bullet(rotation, {spawnPosition.x, spawnPosition.y}));
     }
   return nullptr;
 }
